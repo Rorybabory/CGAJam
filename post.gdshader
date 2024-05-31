@@ -1,9 +1,9 @@
-shader_type canvas_item;
+shader_type spatial;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 uniform sampler2D bayer_texture : filter_nearest;
 
-uniform sampler2D viewport_texture;
+
 
 
 uniform float hue;
@@ -153,7 +153,7 @@ void fragment() {
 	
 	
 	uv /= screenscale;
-	vec3 col = texture(viewport_texture, uv).rgb;
+	vec3 col = texture(screen_texture, uv).rgb;
 
 	//float dither = bayer_matrix[uvy * 4 + uvx];
 	float dither = texture(bayer_texture, vec2(float(uvx)/32.0f,float(uvy)/32.0f)).r-0.5f;
@@ -175,9 +175,9 @@ void fragment() {
 	}
 
 	
-	COLOR = vec4(col,1.0);
+	//COLOR = vec4(col,1.0);
 	
-	//ALBEDO = vec3(dither);
+	ALBEDO = col;
 }
 
 //void light() {

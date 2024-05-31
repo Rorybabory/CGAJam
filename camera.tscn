@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsl56hcvjjn1r"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_cbb2p"]
+[ext_resource type="Shader" path="res://post.gdshader" id="2_mxpv0"]
+[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="3_qab5c"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_co2lp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3e6p"]
+render_priority = 0
+shader = ExtResource("2_mxpv0")
+shader_parameter/hue = null
+shader_parameter/saturation = null
+shader_parameter/value = 0.46
+shader_parameter/ditherLevel = 0.22
+shader_parameter/renderMode = 0
+shader_parameter/bayer_texture = ExtResource("3_qab5c")
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148277, 1.91366, 4.20116)
+current = true
+script = ExtResource("1_cbb2p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.105, 0, 0, 0, 1.155, 0, 0, -0.06)
+mesh = SubResource("QuadMesh_co2lp")
+surface_material_override/0 = SubResource("ShaderMaterial_j3e6p")

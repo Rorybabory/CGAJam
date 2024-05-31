@@ -1,13 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgmcxln0gcs0y"]
+[gd_scene load_steps=10 format=3 uid="uid://bgmcxln0gcs0y"]
 
-[ext_resource type="Script" path="res://viewportInput.gd" id="1_lecau"]
 [ext_resource type="Material" uid="uid://b674ovdmk80h5" path="res://default.tres" id="1_m1ul3"]
 [ext_resource type="Material" uid="uid://dnv8nb753pcmv" path="res://default2.tres" id="2_1aqd3"]
+[ext_resource type="PackedScene" uid="uid://bsl56hcvjjn1r" path="res://camera.tscn" id="2_armmi"]
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="3_palnv"]
-[ext_resource type="Shader" path="res://post.gdshader" id="4_8ujkp"]
-[ext_resource type="Script" path="res://camera.gd" id="4_ken53"]
-[ext_resource type="FontFile" uid="uid://dbj3jclcedqj3" path="res://m5x7.ttf" id="6_5u888"]
-[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="6_hg311"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("3_palnv")
@@ -29,59 +25,19 @@ size = Vector2(10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m4y1s"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hlyks"]
-viewport_path = NodePath("Viewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_367f8"]
-resource_local_to_scene = true
-shader = ExtResource("4_8ujkp")
-shader_parameter/hue = null
-shader_parameter/saturation = null
-shader_parameter/value = 0.155
-shader_parameter/ditherLevel = 0.24
-shader_parameter/renderMode = 0
-shader_parameter/bayer_texture = ExtResource("6_hg311")
-shader_parameter/viewport_texture = SubResource("ViewportTexture_hlyks")
-
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_lecau")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2a4hn")
 
-[node name="Viewport" type="SubViewport" parent="."]
-size = Vector2i(1280, 800)
+[node name="Camera3D" parent="." instance=ExtResource("2_armmi")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Viewport"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_m1ul3")
 mesh = SubResource("PlaneMesh_r81sd")
-skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Viewport"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501118, 0)
 rotation_edit_mode = 2
 material_override = ExtResource("2_1aqd3")
 mesh = SubResource("BoxMesh_m4y1s")
-skeleton = NodePath("../..")
-
-[node name="Camera3D" type="Camera3D" parent="Viewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148277, 1.91366, 4.20116)
-current = true
-script = ExtResource("4_ken53")
-
-[node name="Node" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Node"]
-material = SubResource("ShaderMaterial_367f8")
-offset_left = -5.0
-offset_top = -1.0
-offset_right = 1282.0
-offset_bottom = 801.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Node"]
-offset_right = 175.0
-offset_bottom = 55.0
-theme_override_colors/default_color = Color(1, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("6_5u888")
-theme_override_font_sizes/normal_font_size = 21
-text = "hello world"
