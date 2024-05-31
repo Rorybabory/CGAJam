@@ -2,18 +2,18 @@
 
 [ext_resource type="Material" uid="uid://b674ovdmk80h5" path="res://default.tres" id="1_m1ul3"]
 [ext_resource type="Material" uid="uid://dnv8nb753pcmv" path="res://default2.tres" id="2_1aqd3"]
-[ext_resource type="PackedScene" uid="uid://bsl56hcvjjn1r" path="res://camera.tscn" id="2_armmi"]
+[ext_resource type="PackedScene" path="res://camera.tscn" id="2_armmi"]
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="3_palnv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("3_palnv")
 
-[sub_resource type="Sky" id="Sky_h1i0c"]
+[sub_resource type="Sky" id="Sky_obiwp"]
 sky_material = SubResource("PanoramaSkyMaterial_0l3sr")
 
 [sub_resource type="Environment" id="Environment_2a4hn"]
 background_mode = 2
-sky = SubResource("Sky_h1i0c")
+sky = SubResource("Sky_obiwp")
 ssr_enabled = true
 ssao_enabled = true
 ssao_radius = 0.16
