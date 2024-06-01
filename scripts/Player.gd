@@ -13,11 +13,11 @@ func _ready():
 func normalized_mouse():
 	var mousePos = _mouse_position
 	
-	mousePos /= Vector2(640, 400);
+	mousePos /= get_viewport().get_visible_rect().size
 	mousePos *= Vector2(320.0/288.0, 200.0/168.0)
 	
-	#mousePos.x = clamp(mousePos.x, 0.0, 1.0)
-	#mousePos.y = clamp(mousePos.y, 0.0, 1.0)
+	mousePos.x = clamp(mousePos.x, 0.0, 1.0)
+	mousePos.y = clamp(mousePos.y, 0.0, 1.0)
 	
 	return mousePos;
 	pass
