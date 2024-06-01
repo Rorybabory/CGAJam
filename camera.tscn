@@ -11,8 +11,8 @@ render_priority = 0
 shader = ExtResource("2_mxpv0")
 shader_parameter/hue = null
 shader_parameter/saturation = null
-shader_parameter/value = 0.46
-shader_parameter/ditherLevel = 0.22
+shader_parameter/value = 0.585
+shader_parameter/ditherLevel = 0.15
 shader_parameter/renderMode = 0
 shader_parameter/bayer_texture = ExtResource("3_qab5c")
 

@@ -146,8 +146,8 @@ void fragment() {
 	}else if (renderMode == 3) {
 		screenscale = vec2(160.0f,100.0f);
 	}
-	vec2 uv = round(SCREEN_UV * screenscale);
-
+	vec2 uv = floor(SCREEN_UV * screenscale);
+	
 	int uvx = int(uv.x) % 4;
 	int uvy = int(uv.y) % 4;
 	
@@ -176,7 +176,10 @@ void fragment() {
 
 	
 	//COLOR = vec4(col,1.0);
-	
+	//vec2 testUV = SCREEN_UV;
+	//screenscale = vec2(160, 100);
+	//testUV = round(testUV * screenscale) / screenscale;
+	//ALBEDO = vec3(testUV.x, testUV.y, 0.0f);
 	ALBEDO = col;
 }
 
