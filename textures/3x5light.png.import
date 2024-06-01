@@ -1,0 +1,20 @@
+[remap]
+
+importer="dt.abfi"
+type="CompressedTexture2D"
+uid="uid://dpxrju4iddanp"
+path="res://.godot/imported/3x5light.png-a0939b32c0886fd3c63a750554bf4e04.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://textures/3x5light.png"
+dest_files=["res://.godot/imported/3x5light.png-a0939b32c0886fd3c63a750554bf4e04.ctex"]
+
+[params]
+
+ranges=PackedStringArray(" -/", "0-?", "@-O", "P-_", "\'-o", "p-~")
+letter_spacing=1
+mipmaps=false
