@@ -52,11 +52,11 @@ func _process(delta):
 				var forward = -transform.basis.z;
 				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (0.15-mousePos.y) * SPEED * 1000
 				moveTimer += delta * 30
-				cameraOffset += sin(moveTimer) * delta
+				cameraOffset += sin(moveTimer) * delta * 1.5
 	velocity = velocity.lerp(target_velocity, delta * 5)
 	
 	
-	#$Camera3D.position.y = cameraHeight+cameraOffset*0.1
+	$Camera3D.position.y = cameraHeight+cameraOffset
 	move_and_slide();
 	print("dragging: " + str(dragging) + " | x: " + str(mousePos.x) + " y: " + str(mousePos.y) + " | x vel: " + str(_mouse_velocity.x) + " y vel: " + str(_mouse_velocity.y))
 	pass
