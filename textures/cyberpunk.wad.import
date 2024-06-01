@@ -1,0 +1,16 @@
+[remap]
+
+importer="qodot.wad"
+type="Resource"
+uid="uid://c0hrox5t7pt1e"
+path="res://.godot/imported/cyberpunk.wad-f295507a4e157a31f62d58704b5ef8a4.res"
+
+[deps]
+
+source_file="res://textures/cyberpunk.wad"
+dest_files=["res://.godot/imported/cyberpunk.wad-f295507a4e157a31f62d58704b5ef8a4.res"]
+
+[params]
+
+palette_file="res://addons/qodot/palette.lmp"
+generate_mipmaps=true

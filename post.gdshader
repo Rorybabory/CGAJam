@@ -115,6 +115,15 @@ vec3 palettize4(vec3 col) {
 	return palette[closest];
 	
 }
+
+vec3 srgb_to_linear(vec3 color) {
+	return mix(
+		pow((color.rgb + vec3(0.055)) * (1.0 / (1.0 + 0.055)), vec3(2.4)),
+		color.rgb * (1.0 / 12.92),
+		lessThan(color.rgb, vec3(0.04045))
+	);
+}
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
@@ -180,7 +189,11 @@ void fragment() {
 	//screenscale = vec2(160, 100);
 	//testUV = round(testUV * screenscale) / screenscale;
 	//ALBEDO = vec3(testUV.x, testUV.y, 0.0f);
-	ALBEDO = col;
+	//col = vec3(1.0f,0.333,1.0);
+	ALBEDO = srgb_to_linear(col);
+	
+	SPECULAR = 0.0;
+	RIM = 0.0;
 }
 
 //void light() {
