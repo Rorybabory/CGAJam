@@ -9,12 +9,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("3_palnv")
 
-[sub_resource type="Sky" id="Sky_h1i0c"]
+[sub_resource type="Sky" id="Sky_obiwp"]
 sky_material = SubResource("PanoramaSkyMaterial_0l3sr")
 
 [sub_resource type="Environment" id="Environment_2a4hn"]
 background_mode = 2
-sky = SubResource("Sky_h1i0c")
+sky = SubResource("Sky_obiwp")
 ssr_enabled = true
 ssao_enabled = true
 ssao_radius = 0.16
