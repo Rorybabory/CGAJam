@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 var _mouse_position : Vector2 = Vector2(0,0)
@@ -52,7 +53,7 @@ func _process(delta):
 				var forward = -transform.basis.z;
 				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (0.15-mousePos.y) * SPEED * 1000
 				moveTimer += delta * 30
-				cameraOffset += sin(moveTimer) * delta * 1.5
+				cameraOffset += sin(moveTimer) * delta * (0.15-mousePos.y) * 8.0
 	velocity = velocity.lerp(target_velocity, delta * 5)
 
 	$Node3D/Camera3D.position.y = cameraHeight+cameraOffset

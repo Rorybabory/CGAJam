@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="6_lkany"]
 [ext_resource type="Texture2D" uid="uid://cpg5haloexkpo" path="res://textures/Cyberpunk/brickfloor.png" id="7_ls7kc"]
 [ext_resource type="Texture2D" uid="uid://dab5jco26k72d" path="res://textures/Cyberpunk/brick.png" id="8_4le3e"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="9_0p0r4"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="9_ab4xf"]
 [ext_resource type="Texture2D" uid="uid://dts7kpedi6e2d" path="res://textures/Cyberpunk/concrete.png" id="9_wje4f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
@@ -127,4 +127,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0308, -2.86537, 5.05379)
 light_energy = 48.55
 omni_range = 25.874
 
-[node name="Player" parent="." instance=ExtResource("9_0p0r4")]
+[node name="Player" parent="." instance=ExtResource("9_ab4xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.8749, 0)
