@@ -1,18 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhfsx4iinxati"]
+[gd_scene load_steps=4 format=3 uid="uid://dhfsx4iinxati"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_e0kof"]
+[ext_resource type="PackedScene" uid="uid://ck8xlu1eq18ij" path="res://scenes/magnet_arm.tscn" id="2_15n87"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hutc"]
 radius = 1.005
 height = 4.0
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.534494, -15.8477, 1.64094)
 script = ExtResource("1_e0kof")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10724, 0)
 shape = SubResource("CapsuleShape3D_7hutc")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48886, 0)
 current = true
+
+[node name="Magnet Arm" parent="Node3D" instance=ExtResource("2_15n87")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.41, 1.73886, 0)
