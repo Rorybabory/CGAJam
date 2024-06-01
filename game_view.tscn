@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://w2xalq2tnh5e"]
+
+[ext_resource type="PackedScene" uid="uid://c0qjepbwnxj1h" path="res://testLevel.tscn" id="1_eh43v"]
+[ext_resource type="Shader" path="res://game_view.gdshader" id="11_wgvg1"]
+[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://CGA_UI.png" id="12_1p0ij"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pl2tr"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vuha"]
+resource_local_to_scene = true
+shader = ExtResource("11_wgvg1")
+shader_parameter/viewport_texture = SubResource("ViewportTexture_pl2tr")
+
+[node name="Node" type="Node"]
+
+[node name="Viewport" type="SubViewport" parent="."]
+size = Vector2i(576, 336)
+
+[node name="Level" parent="Viewport" instance=ExtResource("1_eh43v")]
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_6vuha")
+offset_right = 576.0
+offset_bottom = 336.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CgaUi" type="Sprite2D" parent="."]
+position = Vector2(320, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("12_1p0ij")

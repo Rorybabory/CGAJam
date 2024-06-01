@@ -1,8 +1,9 @@
-shader_type spatial;
+shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 uniform sampler2D bayer_texture : filter_nearest;
 
+uniform sampler2D viewport_texture : filter_nearest;
 
 
 
@@ -155,32 +156,42 @@ void fragment() {
 	}else if (renderMode == 3) {
 		screenscale = vec2(160.0f,100.0f);
 	}
-	vec2 uv = floor(SCREEN_UV * screenscale);
+	vec2 uv = floor((UV) * screenscale);
 	
 	int uvx = int(uv.x) % 4;
 	int uvy = int(uv.y) % 4;
 	
 	
 	uv /= screenscale;
-	vec3 col = texture(screen_texture, uv).rgb;
+	vec3 col = texture(viewport_texture, uv+vec2(0.0001)).rgb;
 
 	//float dither = bayer_matrix[uvy * 4 + uvx];
 	float dither = texture(bayer_texture, vec2(float(uvx)/32.0f,float(uvy)/32.0f)).r-0.5f;
 	
 
 	col = rgb2hsv(col);
-	col.r += hue;
-	col.g += saturation;
-	col.b += value;
+	
+	vec3 hsv = vec3(hue,saturation,value);
+	float ditherTemp = dither;
+	if (UV.x > 288.0f/320.0f || UV.y > 168.0f/200.0f) {
+		ditherTemp = 0.0;
+	}else {
+		col += hsv;
+	}
+	
+	
 	col = hsv2rgb(col);
+	
+
+	
 	if (renderMode == 0) {
-		col = palettize1(col+dither*ditherLevel);
+		col = palettize1(col+ditherTemp*ditherLevel);
 	}else if (renderMode == 1) {
-		col = palettize2(col+dither*ditherLevel);
+		col = palettize2(col+ditherTemp*ditherLevel);
 	}else if (renderMode == 2) {
-		col = palettize3(col+dither*ditherLevel);
+		col = palettize3(col+ditherTemp*ditherLevel);
 	}else if (renderMode == 3) {
-		col = palettize4(col+dither*ditherLevel);
+		col = palettize4(col+ditherTemp*ditherLevel);
 	}
 
 	
@@ -190,10 +201,10 @@ void fragment() {
 	//testUV = round(testUV * screenscale) / screenscale;
 	//ALBEDO = vec3(testUV.x, testUV.y, 0.0f);
 	//col = vec3(1.0f,0.333,1.0);
-	ALBEDO = srgb_to_linear(col);
+	COLOR = vec4(srgb_to_linear(col), 1.0);
 	
-	SPECULAR = 0.0;
-	RIM = 0.0;
+	//COLOR = texture(viewport_texture, uv+vec2(0.0001));
+
 }
 
 //void light() {
