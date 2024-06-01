@@ -7,6 +7,11 @@ var dragging : bool = false
 var SPEED = 12
 var ROTATE_SPEED = 8
 
+@onready var cameraHeight = $Camera3D.position.y 
+var cameraOffset = 0.0
+
+var moveTimer = 0.0
+
 func _ready():
 	pass
 
@@ -46,7 +51,12 @@ func _process(delta):
 		if (mousePos.y < 0.15):
 				var forward = -transform.basis.z;
 				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (0.15-mousePos.y) * SPEED * 1000
+				moveTimer += delta * 30
+				cameraOffset += sin(moveTimer) * delta
 	velocity = velocity.lerp(target_velocity, delta * 5)
+	
+	
+	#$Camera3D.position.y = cameraHeight+cameraOffset*0.1
 	move_and_slide();
 	print("dragging: " + str(dragging) + " | x: " + str(mousePos.x) + " y: " + str(mousePos.y) + " | x vel: " + str(_mouse_velocity.x) + " y vel: " + str(_mouse_velocity.y))
 	pass

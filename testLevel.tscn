@@ -128,3 +128,4 @@ light_energy = 48.55
 omni_range = 25.874
 
 [node name="Player" parent="." instance=ExtResource("9_ab4xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.8749, 0)
