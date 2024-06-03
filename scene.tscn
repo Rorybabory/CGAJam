@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgmcxln0gcs0y"]
+[gd_scene load_steps=7 format=3 uid="uid://bgmcxln0gcs0y"]
 
 [ext_resource type="Script" path="res://viewportInput.gd" id="1_3l80y"]
 [ext_resource type="PackedScene" uid="uid://w2xalq2tnh5e" path="res://game_view.tscn" id="2_jgcwc"]
 [ext_resource type="Shader" path="res://post.gdshader" id="11_aqgoj"]
+[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="12_ecggo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ttutk"]
 viewport_path = NodePath("SubViewportContainer/mainViewport")
@@ -11,10 +12,11 @@ viewport_path = NodePath("SubViewportContainer/mainViewport")
 resource_local_to_scene = true
 shader = ExtResource("11_aqgoj")
 shader_parameter/hue = null
-shader_parameter/saturation = null
-shader_parameter/value = null
-shader_parameter/ditherLevel = null
+shader_parameter/saturation = 0.25
+shader_parameter/value = 0.195
+shader_parameter/ditherLevel = 0.155
 shader_parameter/renderMode = null
+shader_parameter/bayer_texture = ExtResource("12_ecggo")
 shader_parameter/viewport_texture = SubResource("ViewportTexture_ttutk")
 
 [node name="Node3D" type="Node3D"]
