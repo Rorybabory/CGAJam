@@ -20,7 +20,7 @@ func normalized_mouse():
 	var mousePos = _mouse_position
 
 	mousePos /= get_viewport().get_visible_rect().size
-	mousePos *= Vector2(320.0/288.0, 200.0/168.0)
+
 
 	mousePos.x = clamp(mousePos.x, 0.0, 1.0)
 	mousePos.y = clamp(mousePos.y, 0.0, 1.0)
@@ -35,6 +35,9 @@ func _input(event):
 		_mouse_position = event.position
 
 	if event.is_action_pressed("action"):
+		if (normalized_mouse().x <= 0 or normalized_mouse().x >= 1 or
+			normalized_mouse().y <= 0 or normalized_mouse().y >= 1):
+				return
 		dragging = true;
 	elif event.is_action_released("action"):
 		dragging = false;
@@ -47,13 +50,24 @@ func _process(delta):
 	if (dragging):
 		var offset = -(mousePos.x-0.5);
 		if (abs(offset) > 0.1):
-
-			rotate(Vector3(0,1,0), offset * delta * ROTATE_SPEED)
+			if (mousePos.y < 0.85):
+				rotate(Vector3(0,1,0), offset * delta * ROTATE_SPEED)
+			else:
+				var right = -transform.basis.x;
+				target_velocity = Vector3(right.x, 0, right.z) * delta * offset * SPEED * 500
+				moveTimer += delta * 30
+				cameraOffset += sin(moveTimer) * delta * (mousePos.y-0.85) * 4.0
+				pass
 		if (mousePos.y < 0.15):
 				var forward = -transform.basis.z;
 				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (0.15-mousePos.y) * SPEED * 1000
 				moveTimer += delta * 30
 				cameraOffset += sin(moveTimer) * delta * (0.15-mousePos.y) * 8.0
+		if (mousePos.y > 0.85 and abs(offset) < 0.1):
+				var forward = -transform.basis.z;
+				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (mousePos.y-0.85) * -SPEED * 1000
+				moveTimer += delta * 30
+				cameraOffset += sin(moveTimer) * delta * (mousePos.y-0.85) * 8.0
 	velocity = velocity.lerp(target_velocity, delta * 5)
 
 	$Node3D/Camera3D.position.y = cameraHeight+cameraOffset
