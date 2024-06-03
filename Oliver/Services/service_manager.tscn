@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://sv51v2kr4mwc"]
+
+[ext_resource type="Script" path="res://oliver/services/service_manager.gd" id="1_iuawr"]
+
+[node name="Service Manager" type="Node"]
+script = ExtResource("1_iuawr")

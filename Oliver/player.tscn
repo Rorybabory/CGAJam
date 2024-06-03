@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://xoiolcsmm2ok"]
 
 [ext_resource type="PackedScene" uid="uid://bsl56hcvjjn1r" path="res://camera.tscn" id="2_jubq8"]
-[ext_resource type="Script" path="res://Oliver/Magnet.gd" id="3_q1rui"]
+[ext_resource type="Script" path="res://oliver/magnet.gd" id="3_q1rui"]
 
 [sub_resource type="GDScript" id="GDScript_gb2pk"]
 script/source = "extends CharacterBody3D
