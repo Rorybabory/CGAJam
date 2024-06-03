@@ -1,35 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgmcxln0gcs0y"]
+[gd_scene load_steps=6 format=3 uid="uid://bgmcxln0gcs0y"]
 
 [ext_resource type="Script" path="res://viewportInput.gd" id="1_3l80y"]
 [ext_resource type="PackedScene" uid="uid://w2xalq2tnh5e" path="res://game_view.tscn" id="2_jgcwc"]
 [ext_resource type="Shader" path="res://post.gdshader" id="11_aqgoj"]
-[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="12_ecggo"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7a7ok"]
-viewport_path = NodePath("mainViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_ttutk"]
+viewport_path = NodePath("SubViewportContainer/mainViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_goy4c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vy52b"]
 resource_local_to_scene = true
 shader = ExtResource("11_aqgoj")
-shader_parameter/hue = 0.01
-shader_parameter/saturation = 0.25
+shader_parameter/hue = null
+shader_parameter/saturation = null
 shader_parameter/value = null
-shader_parameter/ditherLevel = 0.16
-shader_parameter/renderMode = 0
-shader_parameter/bayer_texture = ExtResource("12_ecggo")
-shader_parameter/viewport_texture = SubResource("ViewportTexture_7a7ok")
+shader_parameter/ditherLevel = null
+shader_parameter/renderMode = null
+shader_parameter/viewport_texture = SubResource("ViewportTexture_ttutk")
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_3l80y")
 
-[node name="mainViewport" type="SubViewport" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_vy52b")
+offset_right = 640.0
+offset_bottom = 400.0
+
+[node name="mainViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(640, 400)
 render_target_update_mode = 4
 
-[node name="GameView" parent="mainViewport" instance=ExtResource("2_jgcwc")]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_goy4c")
-offset_right = 640.0
-offset_bottom = 400.0
+[node name="GameView" parent="SubViewportContainer/mainViewport" instance=ExtResource("2_jgcwc")]

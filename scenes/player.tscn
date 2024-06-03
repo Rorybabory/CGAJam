@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhfsx4iinxati"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_e0kof"]
-[ext_resource type="PackedScene" path="res://scenes/magnet_arm.tscn" id="2_15n87"]
+[ext_resource type="PackedScene" uid="uid://ck8xlu1eq18ij" path="res://scenes/magnet_arm.tscn" id="2_15n87"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hutc"]
 radius = 1.005

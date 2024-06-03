@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://CGA_UI.png" id="12_1p0ij"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pl2tr"]
-viewport_path = NodePath("Viewport")
+viewport_path = NodePath("SubViewportContainer/Viewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6vuha"]
 resource_local_to_scene = true
@@ -14,14 +14,21 @@ shader_parameter/viewport_texture = SubResource("ViewportTexture_pl2tr")
 
 [node name="Node" type="Node"]
 
-[node name="Viewport" type="SubViewport" parent="."]
-size = Vector2i(576, 336)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Level" parent="Viewport" instance=ExtResource("1_eh43v")]
+[node name="Viewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(576, 336)
+render_target_update_mode = 4
+
+[node name="Level" parent="SubViewportContainer/Viewport" instance=ExtResource("1_eh43v")]
 
 [node name="UI" type="Node2D" parent="."]
 
 [node name="ColorRect2" type="ColorRect" parent="UI"]
+visible = false
 material = SubResource("ShaderMaterial_6vuha")
 offset_right = 576.0
 offset_bottom = 336.0
