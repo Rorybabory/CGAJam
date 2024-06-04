@@ -28,7 +28,6 @@ func normalized_mouse():
 	mousePos.y = clamp(mousePos.y, 0.0, 1.0)
 
 	return mousePos;
-	pass
 
 func _input(event):
 	if event is InputEventMouseMotion and dragging:
