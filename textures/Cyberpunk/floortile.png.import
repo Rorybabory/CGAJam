@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2jmq3wy5e5lk"
-path.s3tc="res://.godot/imported/floortile.png-7383dda588e646133604cb7a08cd8734.s3tc.ctex"
+uid="uid://yca1fb058dgo"
+path="res://.godot/imported/floortile.png-7383dda588e646133604cb7a08cd8734.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/Cyberpunk/floortile.png"
-dest_files=["res://.godot/imported/floortile.png-7383dda588e646133604cb7a08cd8734.s3tc.ctex"]
+dest_files=["res://.godot/imported/floortile.png-7383dda588e646133604cb7a08cd8734.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

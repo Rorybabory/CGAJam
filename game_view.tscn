@@ -16,4 +16,4 @@ render_target_update_mode = 4
 
 [node name="Level" parent="SubViewportContainer/Viewport" instance=ExtResource("1_eh43v")]
 
-[node name="UI" parent="." instance=ExtResource("2_ga5rt")]
+[node name="UI" parent="SubViewportContainer" instance=ExtResource("2_ga5rt")]

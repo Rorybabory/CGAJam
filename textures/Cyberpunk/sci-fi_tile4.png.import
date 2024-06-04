@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c063b44031xsa"
-path.s3tc="res://.godot/imported/sci-fi_tile4.png-3c0f502171921972eb8ae90e43f78e4b.s3tc.ctex"
+uid="uid://ckmkvnmbnhreo"
+path="res://.godot/imported/sci-fi_tile4.png-3c0f502171921972eb8ae90e43f78e4b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/Cyberpunk/sci-fi_tile4.png"
-dest_files=["res://.godot/imported/sci-fi_tile4.png-3c0f502171921972eb8ae90e43f78e4b.s3tc.ctex"]
+dest_files=["res://.godot/imported/sci-fi_tile4.png-3c0f502171921972eb8ae90e43f78e4b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

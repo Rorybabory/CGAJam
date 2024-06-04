@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="4_dyrxy"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="5_a1qjn"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="6_lkany"]
-[ext_resource type="Texture2D" uid="uid://yca1fb058dgo" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
-[ext_resource type="Texture2D" uid="uid://dugx1q0ynjjnh" path="res://textures/Cyberpunk/scifi2.png" id="7_kjjlp"]
-[ext_resource type="Texture2D" uid="uid://ckmkvnmbnhreo" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="8_ulwlp"]
+[ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
+[ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="7_kjjlp"]
+[ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="8_ulwlp"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
