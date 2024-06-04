@@ -1,4 +1,4 @@
-class_name ResourceFloat
+class_name FloatResource
 extends Resource
 
 @export var _value: float
