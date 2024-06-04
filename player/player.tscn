@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhfsx4iinxati"]
 
-[ext_resource type="Script" path="res://player/Player.gd" id="1_3hlxm"]
+[ext_resource type="Script" path="res://player/Player.gd" id="1_mq0ot"]
 [ext_resource type="PackedScene" uid="uid://ck8xlu1eq18ij" path="res://player/magnet_arm.tscn" id="2_o2ctd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hutc"]
@@ -9,7 +9,7 @@ height = 4.0
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.534494, -15.8477, 1.64094)
-script = ExtResource("1_3hlxm")
+script = ExtResource("1_mq0ot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10724, 0)

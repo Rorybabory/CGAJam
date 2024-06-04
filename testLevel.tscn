@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
 [ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="7_kjjlp"]
 [ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="8_ulwlp"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_mk7pt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("1_bbgtc")
@@ -135,7 +135,7 @@ mesh = SubResource("ArrayMesh_drmq7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn/entity_0_mesh_instance/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4icma")
 
-[node name="Player" parent="." instance=ExtResource("9_rrew1")]
+[node name="Player" parent="." instance=ExtResource("9_mk7pt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1649, -2.39841, 1.64094)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
