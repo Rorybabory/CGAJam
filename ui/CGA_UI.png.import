@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clgi8lj8wa1cg"
-path="res://.godot/imported/magnet_charge_marker.png-7b5e2bbc721b21a5d8048fe481aef058.ctex"
+uid="uid://206re7uh5pm0"
+path="res://.godot/imported/CGA_UI.png-67be720fd6079496b2e4abd19a7eaf37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oliver/ui/magnet_charge_marker.png"
-dest_files=["res://.godot/imported/magnet_charge_marker.png-7b5e2bbc721b21a5d8048fe481aef058.ctex"]
+source_file="res://ui/CGA_UI.png"
+dest_files=["res://.godot/imported/CGA_UI.png-67be720fd6079496b2e4abd19a7eaf37.ctex"]
 
 [params]
 

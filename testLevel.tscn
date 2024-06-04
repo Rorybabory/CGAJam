@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
 [ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="7_kjjlp"]
 [ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="8_ulwlp"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="9_rrew1"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("1_bbgtc")

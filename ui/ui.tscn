@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpecpguoxavau"]
 
-[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://oliver/ui/CGA_UI.png" id="1_tjuds"]
+[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://ui/CGA_UI.png" id="1_tjuds"]
 
 [node name="UI" type="Node2D"]
 

@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="9_s5clq"]
 [ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="10_7ekx3"]
 [ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="11_xl8mb"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="12_jugw6"]
-[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://oliver/ui/CGA_UI.png" id="13_gyuic"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="12_jugw6"]
+[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://ui/CGA_UI.png" id="13_gyuic"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ttutk"]
 viewport_path = NodePath("SubViewportContainer/mainViewport")
