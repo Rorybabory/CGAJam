@@ -1,7 +1,6 @@
 extends Node3D
 
 
-@export var input: Input_Service
 @export var power_per_scroll: float
 @export var mouse_delta__power: float
 @export var label: Label

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck8xlu1eq18ij"]
+[gd_scene load_steps=7 format=3 uid="uid://ck8xlu1eq18ij"]
 
-[ext_resource type="Script" path="res://oliver/magnet.gd" id="1_vkemc"]
-[ext_resource type="Resource" uid="uid://dakrtbjuefluo" path="res://oliver/services/input_service.tres" id="2_vkwp6"]
-[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="3_apoy4"]
+[ext_resource type="Script" path="res://oliver/magnet.gd" id="1_djybf"]
+[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="2_kwdt0"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n15q0"]
 
@@ -20,12 +19,11 @@ shape = 0
 
 [node name="Magnet Arm" type="Node3D" node_paths=PackedStringArray("label")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.41, -0.75, 2.08165e-12)
-script = ExtResource("1_vkemc")
-input = ExtResource("2_vkwp6")
+script = ExtResource("1_djybf")
 power_per_scroll = 1.0
 mouse_delta__power = 1.0
 label = NodePath("Label")
-power = ExtResource("3_apoy4")
+power = ExtResource("2_kwdt0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, -5.2318e-16, -3.04919e-24, -3.04919e-24, -3.27835e-08, 0.2, -1.39515e-16, -0.75, -8.74228e-09, 2.08165e-12, 0.07, -0.75)

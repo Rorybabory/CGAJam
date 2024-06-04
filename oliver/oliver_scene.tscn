@@ -1,35 +1,34 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3hyreq65f37a"]
+[gd_scene load_steps=27 format=3 uid="uid://d3hyreq65f37a"]
 
-[ext_resource type="Script" path="res://viewportInput.gd" id="1_6o8ae"]
-[ext_resource type="Shader" path="res://post.gdshader" id="2_ff3ck"]
-[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="3_4ks45"]
-[ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="4_cnfdx"]
-[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="5_au6ve"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="6_l2a8b"]
-[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="7_2vltv"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="8_7lvmt"]
-[ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="9_vttmj"]
-[ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="10_7utvr"]
-[ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="11_pfpmm"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="12_k2ken"]
-[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://CGA_UI.png" id="13_p121w"]
+[ext_resource type="Shader" path="res://post.gdshader" id="2_fb8xs"]
+[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="3_y2evu"]
+[ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="4_h26wq"]
+[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="5_jw33o"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="6_23g3x"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="7_7rbik"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="8_4ku0u"]
+[ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="9_s5clq"]
+[ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="10_7ekx3"]
+[ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="11_xl8mb"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://scenes/player.tscn" id="12_jugw6"]
+[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://oliver/ui/CGA_UI.png" id="13_gyuic"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ttutk"]
 viewport_path = NodePath("SubViewportContainer/mainViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vy52b"]
 resource_local_to_scene = true
-shader = ExtResource("2_ff3ck")
+shader = ExtResource("2_fb8xs")
 shader_parameter/hue = null
 shader_parameter/saturation = 0.25
 shader_parameter/value = 0.195
 shader_parameter/ditherLevel = 0.155
 shader_parameter/renderMode = null
-shader_parameter/bayer_texture = ExtResource("3_4ks45")
+shader_parameter/bayer_texture = ExtResource("3_y2evu")
 shader_parameter/viewport_texture = SubResource("ViewportTexture_ttutk")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
-panorama = ExtResource("4_cnfdx")
+panorama = ExtResource("4_h26wq")
 
 [sub_resource type="Sky" id="Sky_obiwp"]
 sky_material = SubResource("PanoramaSkyMaterial_0l3sr")
@@ -48,22 +47,22 @@ ssao_power = 1.60766
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("5_au6ve")
+albedo_texture = ExtResource("5_jw33o")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggyav"]
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07rbt"]
-albedo_texture = ExtResource("9_vttmj")
+albedo_texture = ExtResource("9_s5clq")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxvap"]
-albedo_texture = ExtResource("10_7utvr")
+albedo_texture = ExtResource("10_7ekx3")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nw0k"]
-albedo_texture = ExtResource("11_pfpmm")
+albedo_texture = ExtResource("11_xl8mb")
 texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_drmq7"]
@@ -115,7 +114,6 @@ size = Vector3(3, 3, 3)
 size = Vector3(3, 3, 3)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_6o8ae")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_vy52b")
@@ -151,17 +149,17 @@ pixel_size = 0.1
 billboard = 1
 double_sided = false
 texture_filter = 0
-texture = ExtResource("5_au6ve")
+texture = ExtResource("5_jw33o")
 
 [node name="QodotMap" type="Node3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
-script = ExtResource("6_l2a8b")
+script = ExtResource("6_23g3x")
 map_file = "C:/Users/Rory Lambert/source/repos/CGA/maps/testmap.map"
-entity_fgd = ExtResource("7_2vltv")
+entity_fgd = ExtResource("7_7rbik")
 texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
 default_material = SubResource("StandardMaterial3D_ggyav")
 
 [node name="entity_0_worldspawn" type="Node3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap"]
-script = ExtResource("8_7lvmt")
+script = ExtResource("8_4ku0u")
 properties = {
 "_tb_textures": "textures\\Cyberpunk",
 "classname": "worldspawn",
@@ -178,7 +176,7 @@ mesh = SubResource("ArrayMesh_drmq7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap/entity_0_worldspawn/entity_0_mesh_instance/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4icma")
 
-[node name="Player" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level" instance=ExtResource("12_k2ken")]
+[node name="Player" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level" instance=ExtResource("12_jugw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1649, -2.39841, 1.64094)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
@@ -199,4 +197,4 @@ omni_range = 34.593
 [node name="CgaUi" type="Sprite2D" parent="SubViewportContainer/mainViewport/GameView/UI"]
 position = Vector2(320, 200)
 scale = Vector2(2, 2)
-texture = ExtResource("13_p121w")
+texture = ExtResource("13_gyuic")

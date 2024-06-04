@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpecpguoxavau"]
 
-[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://CGA_UI.png" id="1_2sd7m"]
+[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://oliver/ui/CGA_UI.png" id="1_tjuds"]
 
 [node name="UI" type="Node2D"]
 
 [node name="CgaUi" type="Sprite2D" parent="."]
 position = Vector2(320, 200)
 scale = Vector2(2, 2)
-texture = ExtResource("1_2sd7m")
+texture = ExtResource("1_tjuds")

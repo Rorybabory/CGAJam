@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://xoiolcsmm2ok"]
+[gd_scene load_steps=12 format=3 uid="uid://eoj5hohwtou2"]
 
-[ext_resource type="PackedScene" uid="uid://bsl56hcvjjn1r" path="res://camera.tscn" id="2_jubq8"]
+[ext_resource type="PackedScene" uid="uid://dg2sl286ef8v" path="res://camera.tscn" id="2_jubq8"]
 [ext_resource type="Script" path="res://oliver/magnet.gd" id="3_q1rui"]
 
 [sub_resource type="GDScript" id="GDScript_gb2pk"]
@@ -154,8 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 [node name="Camera3D2" parent="Head" instance=ExtResource("2_jubq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 visible = false
-current = false
-script = null
 
 [node name="Arm Pivot" type="Node3D" parent="Head"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.41, -0.75, 2.08165e-12)
@@ -171,7 +169,6 @@ mesh = SubResource("CylinderMesh_ud7b0")
 
 [node name="Magnet" type="Node3D" parent="Head/Arm Pivot/MeshInstance3D/MeshInstance3D" node_paths=PackedStringArray("label")]
 script = ExtResource("3_q1rui")
-powerPerScroll = 1.0
 label = NodePath("Label")
 
 [node name="Label" type="Label" parent="Head/Arm Pivot/MeshInstance3D/MeshInstance3D/Magnet"]
