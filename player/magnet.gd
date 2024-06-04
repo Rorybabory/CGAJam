@@ -10,7 +10,8 @@ extends Node3D
 
 func _input(event: InputEvent) -> void:
 	scroll_input(event)
-	drag_input(event)
+	if event is InputEventMouseMotion:
+		drag_input(event)
 
 
 func scroll_input(event: InputEvent) -> void:
