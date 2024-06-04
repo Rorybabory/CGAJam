@@ -6,7 +6,7 @@ extends Node3D
 @export var label: Label
 
 
-@export var power: ResourceFloat
+@export var power: FloatResource
 var _mouse_delta: Vector2
 
 
