@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpecpguoxavau"]
+[gd_scene load_steps=3 format=3 uid="uid://cpecpguoxavau"]
 
 [ext_resource type="Script" path="res://ui/UI.gd" id="1_p6a5c"]
 [ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://ui/CGA_UI.png" id="1_tjuds"]
-[ext_resource type="Script" path="res://Cursor/Cursor.gd" id="2_6myrb"]
-[ext_resource type="Texture2D" uid="uid://bb8sby5y7jdbd" path="res://Cursor/forward.png" id="2_bhmtk"]
 
 [node name="UI" type="Node2D"]
 script = ExtResource("1_p6a5c")
@@ -12,12 +10,3 @@ script = ExtResource("1_p6a5c")
 position = Vector2(320, 200)
 scale = Vector2(2, 2)
 texture = ExtResource("1_tjuds")
-
-[node name="Cursor" type="Node2D" parent="."]
-script = ExtResource("2_6myrb")
-
-[node name="TextureRect" type="TextureRect" parent="Cursor"]
-offset_left = -16.0
-offset_right = 16.0
-offset_bottom = 32.0
-texture = ExtResource("2_bhmtk")
