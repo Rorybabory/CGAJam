@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody3D
 
+signal mouse_changed(mousePosition : Vector2);
+
 var _mouse_position : Vector2 = Vector2(0,0)
 var _mouse_velocity : Vector2 = Vector2(0,0)
 var dragging : bool = false
@@ -10,24 +12,27 @@ var ROTATE_SPEED = 8
 var GRAVITY = -9.81
 
 
+
 @onready var cameraHeight = $Node3D/Camera3D.position.y
 var cameraOffset = 0.0
 
 var moveTimer = 0.0
 
+var mousePos = Vector2(0,0)
+
 func _ready():
 	pass
 
 func normalized_mouse():
-	var mousePos = _mouse_position
+	mousePos = _mouse_position
 
 	mousePos /= get_viewport().get_visible_rect().size
 
 
 	mousePos.x = clamp(mousePos.x, 0.0, 1.0)
 	mousePos.y = clamp(mousePos.y, 0.0, 1.0)
+	mouse_changed.emit(mousePos)
 
-	return mousePos;
 
 func _input(event):
 	if event is InputEventMouseMotion and dragging:
@@ -36,8 +41,8 @@ func _input(event):
 		_mouse_position = event.position
 
 	if event.is_action_pressed("action"):
-		if (normalized_mouse().x <= 0 or normalized_mouse().x >= 1 or
-			normalized_mouse().y <= 0 or normalized_mouse().y >= 1):
+		if (mousePos.x <= 0 or mousePos.x >= 1 or
+			mousePos.y <= 0 or mousePos.y >= 1):
 				return
 		dragging = true;
 	elif event.is_action_released("action"):
@@ -47,12 +52,13 @@ func _input(event):
 
 func _process(delta):
 	var target_velocity = Vector3(0,0,0)
-	var mousePos = normalized_mouse()
+	normalized_mouse()
+	
 	if (not is_on_floor()):
 		velocity.y += GRAVITY
 	if (dragging):
 		var offset = -(mousePos.x-0.5);
-		print("offset: " + str(offset))
+		#print("offset: " + str(offset))
 		if (offset > 0.1):
 			offset -= 0.1
 		elif (offset < -0.1):
@@ -82,5 +88,5 @@ func _process(delta):
 	$Node3D/Camera3D.position.y = cameraHeight+cameraOffset
 
 	move_and_slide();
-	print("dragging: " + str(dragging) + " | x: " + str(mousePos.x) + " y: " + str(mousePos.y) + " | x vel: " + str(_mouse_velocity.x) + " y vel: " + str(_mouse_velocity.y))
+	#print("dragging: " + str(dragging) + " | x: " + str(mousePos.x) + " y: " + str(mousePos.y) + " | x vel: " + str(_mouse_velocity.x) + " y vel: " + str(_mouse_velocity.y))
 	pass
