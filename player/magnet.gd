@@ -6,9 +6,14 @@ extends Node3D
 @export var arm_range_min: Vector3
 @export var arm_range_max: Vector3
 @export var power: FloatResource
+@export var input: InputService
 
 
-func _input(event: InputEvent) -> void:
+func _ready() -> void:
+	input.input.connect(on_input)
+
+
+func on_input(event: InputEvent) -> void:
 	scroll_input(event)
 	if event is InputEventMouseMotion:
 		drag_input(event)

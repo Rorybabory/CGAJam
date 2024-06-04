@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck8xlu1eq18ij"]
+[gd_scene load_steps=6 format=3 uid="uid://ck8xlu1eq18ij"]
 
 [ext_resource type="Script" path="res://player/magnet.gd" id="1_km4l5"]
 [ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="2_gyyd1"]
+[ext_resource type="Resource" uid="uid://cuowic855j2c8" path="res://oliver/services/input_service.tres" id="3_h72m3"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n15q0"]
 
@@ -15,6 +16,7 @@ mouse_delta_power = Vector2(0.005, 0.005)
 arm_range_min = Vector3(-0.75, 2.5, 0.5)
 arm_range_max = Vector3(0.75, 3, 2)
 power = ExtResource("2_gyyd1")
+input = ExtResource("3_h72m3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, -1.04636e-15, -6.09839e-24, 0, -6.55671e-08, 0.2, -1.39515e-16, -1.5, -8.74228e-09, 2.08165e-12, 2.08165e-12, -1.5)
