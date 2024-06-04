@@ -10,6 +10,8 @@ uniform sampler2D viewport_texture : filter_nearest;
 uniform float hue;
 uniform float saturation;
 uniform float value;
+uniform float brightness;
+uniform float contrast;
 uniform float ditherLevel;
 uniform int renderMode;
 render_mode unshaded;
@@ -175,12 +177,19 @@ void fragment() {
 	float ditherTemp = dither;
 	if (UV.x > 288.0f/320.0f || UV.y > 168.0f/200.0f) {
 		ditherTemp = 0.0;
+
+		col = hsv2rgb(col);
+
 	}else {
 		col += hsv;
+		//col.r += dither * 0.4;
+		col = hsv2rgb(col);
+		col = ((col.rgb - 0.5f) * max(contrast, 0)) + 0.5f;
+		col += brightness;
 	}
 	
 	
-	col = hsv2rgb(col);
+
 	
 
 	
@@ -193,8 +202,8 @@ void fragment() {
 	}else if (renderMode == 3) {
 		col = palettize4(col+ditherTemp*ditherLevel);
 	}
-
 	
+
 	//COLOR = vec4(col,1.0);
 	//vec2 testUV = SCREEN_UV;
 	//screenscale = vec2(160, 100);
