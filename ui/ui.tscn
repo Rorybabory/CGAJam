@@ -34,7 +34,7 @@ theme_override_icons/grabber = ExtResource("2_h4g86")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_gwclg")
 min_value = -1.0
 max_value = 1.0
-step = 2.08165e-12
+step = 0.25
 script = ExtResource("5_0wbb8")
 magnet_power = ExtResource("4_v2pdx")
 

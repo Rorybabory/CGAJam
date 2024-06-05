@@ -13,10 +13,10 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func _on_body_exited(body: Node3D) -> void:
-	
+
 	if not body is Magnetizable:
 		return
-	
+
 	var index = magnetizables.find(body)
 	
 	if index != -1:
@@ -26,4 +26,9 @@ func _on_body_exited(body: Node3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	for magnetizable in magnetizables:
-		magnetizable._magnet_interact(magnet_power.value, global_position)
+		magnetizable._magnet_physics_process(magnet_power.value, global_position)
+
+
+func _process(delta: float) -> void:
+	for magnetizable in magnetizables:
+		magnetizable._magnet_process(magnet_power.value, global_position)
