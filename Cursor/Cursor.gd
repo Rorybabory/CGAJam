@@ -30,7 +30,7 @@ func _process(delta):
 		scale = Vector2(4,4)
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		if (mousePos.x > 1.0 or mousePos.y > 1.0):
+		if (mousePos.x > 1.0 or mousePos.y > 1.0 or mousePos.x < 0.0 or mousePos.y < 0.0):
 			texture = null;
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		elif (mousePos.x < 0.4 and mousePos.y > 0.85):

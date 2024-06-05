@@ -47,7 +47,7 @@ shader_parameter/value = 0.15
 shader_parameter/brightness = 0.07
 shader_parameter/contrast = 1.03
 shader_parameter/ditherLevel = 0.27
-shader_parameter/renderMode = 0
+shader_parameter/renderMode = 1
 shader_parameter/bayer_texture = ExtResource("12_ecggo")
 shader_parameter/viewport_texture = SubResource("ViewportTexture_ttutk")
 
