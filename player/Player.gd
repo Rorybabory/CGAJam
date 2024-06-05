@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 signal mouse_changed(mousePosition : Vector2);
 
+var test_object = preload("res://Sprites/test_object.tscn")
+
 var _mouse_position : Vector2 = Vector2(0,0)
 var _mouse_velocity : Vector2 = Vector2(0,0)
 var dragging : bool = false
@@ -13,7 +15,7 @@ var GRAVITY = -9.81
 
 var target_velocity = Vector2(0,0)
 
-@onready var cameraHeight = $Node3D/Camera3D.position.y
+@onready var cameraHeight = $CameraPivot/Camera3D.position.y
 var cameraOffset = 0.0
 
 var moveTimer = 0.0
@@ -22,6 +24,7 @@ var mousePos = Vector2(0,0)
 
 func _ready():
 	pass
+
 
 func normalized_mouse():
 	mousePos = get_viewport().get_mouse_position()
@@ -33,19 +36,28 @@ func normalized_mouse():
 	mousePos.y = clamp(mousePos.y, 0.0, 1.0)
 	mouse_changed.emit(mousePos)
 
-
-func _input(event):
-	pass
-	#if event.is_action_pressed("action"):
-		#if (mousePos.x <= 0 or mousePos.x >= 1 or
-			#mousePos.y <= 0 or mousePos.y >= 1):
-				#return
-		#dragging = true;
-	#elif event.is_action_released("action"):
-		#dragging = false;
-		#_mouse_velocity = Vector2(0,0)
-
-
+func pickupObject():
+	var from = $CameraPivot/Camera3D.project_ray_origin(get_viewport().get_mouse_position())
+	var to = from + $CameraPivot/Camera3D.project_ray_normal(get_viewport().get_mouse_position()) * 1000
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	var result = get_world_3d().direct_space_state.intersect_ray(query)
+	if (result):
+		if (result.collider.is_in_group("Pickupable")):
+			print("hit object: " + result.collider.name)
+			result.collider.queue_free()
+			Cursor.activeTexture = result.collider.get_node("Sprite").texture
+			Cursor.holdingObject = true
+	print(Cursor.testStr)
+func throwObject():
+	Cursor.holdingObject = false
+	Cursor.activeTexture = null
+	var instance = test_object.instantiate()
+	get_node("../").add_child(instance)
+	var normal_vector = $CameraPivot/Camera3D.project_ray_normal(get_viewport().get_mouse_position())
+	var cam_origin = $CameraPivot/Camera3D.global_position
+	instance.global_position = cam_origin + normal_vector * 5
+	instance.linear_velocity = normal_vector * 10
+	
 func handle_input(delta):
 	#if mouse down and inside viewport
 	if (Input.is_action_just_pressed("action") and 
@@ -55,8 +67,11 @@ func handle_input(delta):
 		print("started dragging at pos: " + str(mousePos) )
 	if (Input.is_action_just_released("action")):
 		dragging = false
-		
-	
+	if (Input.is_action_just_pressed("pickup")):
+		if (not Cursor.holdingObject):
+			pickupObject()
+		else:
+			throwObject()
 	if (dragging):
 		var offset = -(mousePos.x-0.5);
 		#print("offset: " + str(offset))
@@ -95,7 +110,7 @@ func _process(delta):
 	velocity.x = lerp(velocity.x, target_velocity.x, delta * 5)
 	velocity.z = lerp(velocity.z, target_velocity.z, delta * 5)
 	
-	$Node3D/Camera3D.position.y = cameraHeight+cameraOffset
+	$CameraPivot/Camera3D.position.y = cameraHeight+cameraOffset
 
 	move_and_slide();
 	pass

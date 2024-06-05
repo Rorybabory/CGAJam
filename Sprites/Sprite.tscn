@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://wucs56fs000d"]
-
-[ext_resource type="Script" path="res://Sprites/Sprite.gd" id="1_7qa5w"]
-[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="1_p7cro"]
-
-[node name="Sprite" type="Sprite3D"]
-texture_filter = 0
-texture = ExtResource("1_p7cro")
-script = ExtResource("1_7qa5w")

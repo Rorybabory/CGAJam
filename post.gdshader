@@ -16,6 +16,22 @@ uniform float ditherLevel;
 uniform int renderMode;
 render_mode unshaded;
 
+vec2 uv_curve(vec2 uv)
+{
+	uv = (uv - 0.5) * 2.0;
+	
+	//You can modify the numbers and try different values
+	uv.x *= 1.0 + pow(abs(uv.y) / 4.0, 2.5);
+	uv.y *= 1.0 + pow(abs(uv.x) / 4.0, 2.5);
+	
+	//The scale part (you can delete it when you want)
+	uv /= 1.0;
+	
+	uv = (uv/2.0) + 0.5;
+	return uv;
+}
+
+
 vec3 hsv2rgb(vec3 c)
 {
     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -132,22 +148,6 @@ void vertex() {
 }
 
 void fragment() {
-	//int renderMode = 0;
-	//if (SCREEN_UV.x < 0.25) {
-		//renderMode = 0;
-	//}else if (SCREEN_UV.x < 0.5) {
-		//renderMode = 1;
-	//}else if (SCREEN_UV.x < 0.75) {
-		//renderMode = 2;
-	//}else {
-		//renderMode = 3;
-	//}
-	float bayer_matrix[16] = float[16] (
-        -0.5,     0.0,  -0.375,   0.125,
-        0.25,   -0.25,   0.375,  -0.125,
-     -0.3125,  0.1875, -0.4375,  0.0625,
-      0.4375, -0.0625,  0.3125, -0.1875
-	);
 	vec2 screenscale = vec2(0.0);
 	if (renderMode == 0) {
 		screenscale = vec2(320.0f,200.0f);
@@ -210,6 +210,7 @@ void fragment() {
 	//testUV = round(testUV * screenscale) / screenscale;
 	//ALBEDO = vec3(testUV.x, testUV.y, 0.0f);
 	//col = vec3(1.0f,0.333,1.0);
+	//col -= max(sin(UV.y*400.0*3.141592), 0) * 0.2;
 	COLOR = vec4(srgb_to_linear(col), 1.0);
 	
 	//COLOR = texture(viewport_texture, uv+vec2(0.0001));
