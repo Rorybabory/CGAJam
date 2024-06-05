@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtlqbxeqqmav0"]
+
+[ext_resource type="Script" path="res://Sprites/Sprite.gd" id="1_kjf3k"]
+[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="2_teldj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5qlg"]
+
+[node name="TestObject" type="RigidBody3D" groups=["Pickupable"]]
+mass = 10.0
+script = ExtResource("1_kjf3k")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_teldj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.425, 0, 0, 0, 2.425, 0, 0, 0, 2.425, 0, 0, 0)
+shape = SubResource("BoxShape3D_e5qlg")
