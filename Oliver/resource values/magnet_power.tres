@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="FloatResource" load_steps=2 format=3 uid="uid://bd44cv2ashl4t"]
+
+[ext_resource type="Script" path="res://oliver/resource values/float_resource.gd" id="1_jgca8"]
+
+[resource]
+script = ExtResource("1_jgca8")
+_value = 0.0

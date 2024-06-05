@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InputService" load_steps=2 format=3 uid="uid://cuowic855j2c8"]
+
+[ext_resource type="Script" path="res://oliver/services/input_service.gd" id="1_txnnp"]
+
+[resource]
+script = ExtResource("1_txnnp")
