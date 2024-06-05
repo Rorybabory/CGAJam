@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ServiceManager="*res://oliver/services/service_manager.tscn"
 Cursor="*res://Cursor/CursorGlobal.gd"
+ServiceManager="*res://Oliver/Services/service_manager.tscn"
 
 [display]
 

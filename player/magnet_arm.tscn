@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck8xlu1eq18ij"]
 
 [ext_resource type="Script" path="res://player/magnet.gd" id="1_km4l5"]
-[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="2_gyyd1"]
-[ext_resource type="Resource" uid="uid://cuowic855j2c8" path="res://oliver/services/input_service.tres" id="3_h72m3"]
+[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://Oliver/resource values/magnet_power.tres" id="2_gyyd1"]
+[ext_resource type="Resource" uid="uid://cuowic855j2c8" path="res://Oliver/Services/input_service.tres" id="3_h72m3"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n15q0"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://0as58al6q5ia" path="res://ui/UI.png" id="1_yjx2x"]
 [ext_resource type="Texture2D" uid="uid://clgi8lj8wa1cg" path="res://ui/magnet_charge_marker.png" id="2_h4g86"]
 [ext_resource type="Script" path="res://ui/MagnetChargeMarker.gd" id="3_vhvjt"]
-[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="4_v2pdx"]
+[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://Oliver/resource values/magnet_power.tres" id="4_v2pdx"]
 
 [node name="UI" type="Node2D"]
 
