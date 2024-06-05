@@ -8,9 +8,5 @@ func _ready() -> void:
 	magnet_power.value_changed.connect(set_value_no_signal)
 
 
-func set_slider_value(new_value: float) -> void:
-	set_value_no_signal(new_value)
-
-
-func _on_value_changed(value: float) -> void:
+func _on_drag_ended(value_changed: bool) -> void:
 	magnet_power.value = value

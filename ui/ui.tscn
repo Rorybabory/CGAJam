@@ -38,4 +38,5 @@ step = 2.08165e-12
 script = ExtResource("5_0wbb8")
 magnet_power = ExtResource("4_v2pdx")
 
+[connection signal="drag_ended" from="UI Position_Scale/VSlider" to="UI Position_Scale/VSlider" method="_on_drag_ended"]
 [connection signal="value_changed" from="UI Position_Scale/VSlider" to="UI Position_Scale/VSlider" method="_on_value_changed"]
