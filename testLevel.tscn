@@ -1,14 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0qjepbwnxj1h"]
+[gd_scene load_steps=22 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="4_dyrxy"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="5_a1qjn"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="6_lkany"]
-[ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
+[ext_resource type="Texture2D" uid="uid://yca1fb058dgo" path="res://textures/Cyberpunk/floortile.png" id="6_trlns"]
 [ext_resource type="Texture2D" uid="uid://dugx1q0ynjjnh" path="res://textures/Cyberpunk/scifi2.png" id="7_kjjlp"]
 [ext_resource type="Texture2D" uid="uid://ckmkvnmbnhreo" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="8_ulwlp"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
 [ext_resource type="PackedScene" uid="uid://dtlqbxeqqmav0" path="res://Sprites/test_object.tscn" id="9_v078i"]
+[ext_resource type="Texture2D" uid="uid://74sje5j30eak" path="res://textures/testWeapon.png" id="10_guc5l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("1_bbgtc")
@@ -137,3 +138,6 @@ light_energy = 14.987
 omni_range = 34.593
 
 [node name="TestObject" parent="." instance=ExtResource("9_v078i")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("10_guc5l")
