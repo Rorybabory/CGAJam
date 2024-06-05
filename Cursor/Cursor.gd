@@ -30,7 +30,10 @@ func _process(delta):
 		scale = Vector2(4,4)
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		if (mousePos.x < 0.4 and mousePos.y > 0.85):
+		if (mousePos.x > 1.0 or mousePos.y > 1.0):
+			texture = null;
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		elif (mousePos.x < 0.4 and mousePos.y > 0.85):
 			texture = cursorTextures["strafe_left"]
 		elif (mousePos.x > 0.6 and mousePos.y > 0.85):
 			texture = cursorTextures["strafe_right"]
@@ -47,9 +50,6 @@ func _process(delta):
 		elif (mousePos.y > 0.4):
 			texture = cursorTextures["backward"]
 		
-		else:
-			texture = null;
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		scale = Vector2(2,2)
 	position = floor(((get_viewport().get_mouse_position())+Vector2(0,16))/4.0)*4.0
 	#print(str(mousePos))
