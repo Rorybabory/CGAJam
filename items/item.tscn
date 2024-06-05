@@ -4,14 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://biq3a5quge6yb" path="res://icon.svg" id="1_te3hq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
+size = Vector3(3, 3, 3)
 
 [node name="Item" type="RigidBody3D"]
+collision_layer = 2
+max_contacts_reported = 20
+contact_monitor = true
 script = ExtResource("1_q30h4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v7qg2")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 pixel_size = 0.0078
 texture = ExtResource("1_te3hq")
 

@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpecpguoxavau"]
+[gd_scene load_steps=8 format=3 uid="uid://cpecpguoxavau"]
 
 [ext_resource type="Texture2D" uid="uid://0as58al6q5ia" path="res://ui/UI.png" id="1_yjx2x"]
 [ext_resource type="Texture2D" uid="uid://clgi8lj8wa1cg" path="res://ui/magnet_charge_marker.png" id="2_h4g86"]
-[ext_resource type="Script" path="res://ui/MagnetChargeMarker.gd" id="3_vhvjt"]
 [ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://Oliver/resource values/magnet_power.tres" id="4_v2pdx"]
+[ext_resource type="Script" path="res://ui/power_slider.gd" id="5_0wbb8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xytl2"]
+
+[sub_resource type="Theme" id="Theme_7fdhe"]
+VSlider/icons/grabber = ExtResource("2_h4g86")
+VSlider/icons/grabber_highlight = ExtResource("2_h4g86")
+VSlider/styles/slider = SubResource("StyleBoxFlat_xytl2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwclg"]
 
 [node name="UI" type="Node2D"]
 
@@ -15,9 +24,18 @@ scale = Vector2(2, 2)
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_yjx2x")
 
-[node name="MagnetChargeMarker" type="Sprite2D" parent="UI Position_Scale"]
-position = Vector2(144, -86)
-texture = ExtResource("2_h4g86")
-script = ExtResource("3_vhvjt")
-power = ExtResource("4_v2pdx")
-vertical_range = 86.0
+[node name="VSlider" type="VSlider" parent="UI Position_Scale"]
+offset_left = 134.0
+offset_top = -94.0
+offset_right = 154.0
+offset_bottom = 94.0
+theme = SubResource("Theme_7fdhe")
+theme_override_icons/grabber = ExtResource("2_h4g86")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_gwclg")
+min_value = -1.0
+max_value = 1.0
+step = 2.08165e-12
+script = ExtResource("5_0wbb8")
+magnet_power = ExtResource("4_v2pdx")
+
+[connection signal="value_changed" from="UI Position_Scale/VSlider" to="UI Position_Scale/VSlider" method="_on_value_changed"]

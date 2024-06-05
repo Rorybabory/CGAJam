@@ -1,5 +1,8 @@
-extends RigidBody3D
+extends Magnetizable
 
 
-func _on_body_entered(body: Node) -> void:
-	print(body.name)
+func _magnet_interact(power: float, position: Vector3) -> void:
+	
+	var to_magnet = (global_position - position).normalized()
+	
+	add_constant_central_force(to_magnet * power)
