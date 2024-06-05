@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uf5mxb0tspgo"
+path="res://.godot/imported/magnetMesh.obj-7feddcb38a525a5684e26c965312ecac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/magnetMesh.obj-7feddcb38a525a5684e26c965312ecac.mesh"]
+
+source_file="res://player/magnetMesh.obj"
+dest_files=["res://.godot/imported/magnetMesh.obj-7feddcb38a525a5684e26c965312ecac.mesh", "res://.godot/imported/magnetMesh.obj-7feddcb38a525a5684e26c965312ecac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
