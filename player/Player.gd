@@ -70,8 +70,8 @@ func handle_input(delta):
 	if (Input.is_action_just_pressed("pickup")):
 		if (not Cursor.holdingObject):
 			pickupObject()
-		else:
-			throwObject()
+		#else:
+			#throwObject()
 	if (dragging):
 		var offset = -(mousePos.x-0.5);
 		#print("offset: " + str(offset))
