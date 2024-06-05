@@ -1,34 +1,37 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3hyreq65f37a"]
+[gd_scene load_steps=28 format=3 uid="uid://rqi0svj7oxru"]
 
-[ext_resource type="Shader" path="res://post.gdshader" id="2_fb8xs"]
-[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="3_y2evu"]
-[ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="4_h26wq"]
-[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="5_jw33o"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="6_23g3x"]
-[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="7_7rbik"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="8_4ku0u"]
-[ext_resource type="Texture2D" uid="uid://2jmq3wy5e5lk" path="res://textures/Cyberpunk/floortile.png" id="9_s5clq"]
-[ext_resource type="Texture2D" uid="uid://5af4kwuu1ceb" path="res://textures/Cyberpunk/scifi2.png" id="10_7ekx3"]
-[ext_resource type="Texture2D" uid="uid://c063b44031xsa" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="11_xl8mb"]
-[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="12_jugw6"]
-[ext_resource type="Texture2D" uid="uid://206re7uh5pm0" path="res://ui/CGA_UI.png" id="13_gyuic"]
+[ext_resource type="Shader" path="res://post.gdshader" id="1_n54wi"]
+[ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="2_28xri"]
+[ext_resource type="PackedScene" uid="uid://cpecpguoxavau" path="res://ui/ui.tscn" id="3_rskwx"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="4_6jq32"]
+[ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="5_kvcsa"]
+[ext_resource type="Texture2D" uid="uid://ms2sm3bvn0yl" path="res://textures/testSprite.bmp" id="6_8x7gk"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="7_vy82x"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="8_8t1uw"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="9_kqoe3"]
+[ext_resource type="Texture2D" uid="uid://yca1fb058dgo" path="res://textures/Cyberpunk/floortile.png" id="10_u6fdk"]
+[ext_resource type="Texture2D" uid="uid://dugx1q0ynjjnh" path="res://textures/Cyberpunk/scifi2.png" id="11_vksic"]
+[ext_resource type="Texture2D" uid="uid://ckmkvnmbnhreo" path="res://textures/Cyberpunk/sci-fi_tile4.png" id="12_7qne3"]
+[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="13_02glv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ttutk"]
-viewport_path = NodePath("SubViewportContainer/mainViewport")
+viewport_path = NodePath("Game View Container/Main Viewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vy52b"]
 resource_local_to_scene = true
-shader = ExtResource("2_fb8xs")
+shader = ExtResource("1_n54wi")
 shader_parameter/hue = null
 shader_parameter/saturation = 0.25
 shader_parameter/value = 0.195
+shader_parameter/brightness = null
+shader_parameter/contrast = null
 shader_parameter/ditherLevel = 0.155
 shader_parameter/renderMode = null
-shader_parameter/bayer_texture = ExtResource("3_y2evu")
+shader_parameter/bayer_texture = ExtResource("2_28xri")
 shader_parameter/viewport_texture = SubResource("ViewportTexture_ttutk")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
-panorama = ExtResource("4_h26wq")
+panorama = ExtResource("5_kvcsa")
 
 [sub_resource type="Sky" id="Sky_obiwp"]
 sky_material = SubResource("PanoramaSkyMaterial_0l3sr")
@@ -47,22 +50,22 @@ ssao_power = 1.60766
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("5_jw33o")
+albedo_texture = ExtResource("6_8x7gk")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggyav"]
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07rbt"]
-albedo_texture = ExtResource("9_s5clq")
+albedo_texture = ExtResource("10_u6fdk")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxvap"]
-albedo_texture = ExtResource("10_7ekx3")
+albedo_texture = ExtResource("11_vksic")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nw0k"]
-albedo_texture = ExtResource("11_xl8mb")
+albedo_texture = ExtResource("12_7qne3")
 texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_drmq7"]
@@ -113,88 +116,84 @@ size = Vector3(3, 3, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_udr3y"]
 size = Vector3(3, 3, 3)
 
-[node name="Node3D" type="Node3D"]
+[node name="Root" type="Node3D"]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Game View Container" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_vy52b")
 offset_right = 640.0
 offset_bottom = 400.0
 
-[node name="mainViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="Main Viewport" type="SubViewport" parent="Game View Container"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(640, 400)
 render_target_update_mode = 4
 
-[node name="GameView" type="Node" parent="SubViewportContainer/mainViewport"]
+[node name="UI" parent="Game View Container/Main Viewport" instance=ExtResource("3_rskwx")]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewportContainer/mainViewport/GameView"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="3D Viewport Container" type="SubViewportContainer" parent="Game View Container/Main Viewport"]
+offset_right = 576.0
+offset_bottom = 336.0
 
-[node name="Viewport" type="SubViewport" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer"]
+[node name="3D Viewport" type="SubViewport" parent="Game View Container/Main Viewport/3D Viewport Container"]
 handle_input_locally = false
 size = Vector2i(576, 336)
 render_target_update_mode = 4
 
-[node name="Level" type="Node" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport"]
+[node name="Player" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport" instance=ExtResource("4_6jq32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1649, -2.39841, 1.64094)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
+[node name="Level" type="Node" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level"]
 environment = SubResource("Environment_2a4hn")
 
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
+[node name="Sprite3D" type="Sprite3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.44761, -3.85438, -6.61288)
 material_override = SubResource("StandardMaterial3D_1qmnn")
 pixel_size = 0.1
 billboard = 1
 double_sided = false
 texture_filter = 0
-texture = ExtResource("5_jw33o")
+texture = ExtResource("6_8x7gk")
 
-[node name="QodotMap" type="Node3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
-script = ExtResource("6_23g3x")
+[node name="QodotMap" type="Node3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level"]
+script = ExtResource("7_vy82x")
 map_file = "C:/Users/Rory Lambert/source/repos/CGA/maps/testmap.map"
-entity_fgd = ExtResource("7_7rbik")
+entity_fgd = ExtResource("8_8t1uw")
 texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
 default_material = SubResource("StandardMaterial3D_ggyav")
 
-[node name="entity_0_worldspawn" type="Node3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap"]
-script = ExtResource("8_4ku0u")
+[node name="entity_0_worldspawn" type="Node3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/QodotMap"]
+script = ExtResource("9_kqoe3")
 properties = {
 "_tb_textures": "textures\\Cyberpunk",
 "classname": "worldspawn",
 "mapversion": "220"
 }
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap/entity_0_worldspawn"]
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/QodotMap/entity_0_worldspawn"]
 cast_shadow = 2
 gi_mode = 0
 mesh = SubResource("ArrayMesh_drmq7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap/entity_0_worldspawn/entity_0_mesh_instance"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/QodotMap/entity_0_worldspawn/entity_0_mesh_instance"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/QodotMap/entity_0_worldspawn/entity_0_mesh_instance/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/QodotMap/entity_0_worldspawn/entity_0_mesh_instance/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4icma")
 
-[node name="Player" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level" instance=ExtResource("12_jugw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1649, -2.39841, 1.64094)
+[node name="RigidBody3D" type="RigidBody3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/RigidBody3D"]
 shape = SubResource("BoxShape3D_n08cu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level/RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level/RigidBody3D"]
 mesh = SubResource("BoxMesh_udr3y")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/mainViewport/GameView/SubViewportContainer/Viewport/Level"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32469, 0)
 light_energy = 14.987
 omni_range = 34.593
 
-[node name="UI" type="Node2D" parent="SubViewportContainer/mainViewport/GameView"]
-
-[node name="CgaUi" type="Sprite2D" parent="SubViewportContainer/mainViewport/GameView/UI"]
-position = Vector2(320, 200)
-scale = Vector2(2, 2)
-texture = ExtResource("13_gyuic")
+[node name="Item" parent="Game View Container/Main Viewport/3D Viewport Container/3D Viewport/Level" instance=ExtResource("13_02glv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79482, -0.503962, -5.29043)

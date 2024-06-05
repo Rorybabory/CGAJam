@@ -1,31 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck8xlu1eq18ij"]
+[gd_scene load_steps=6 format=3 uid="uid://ck8xlu1eq18ij"]
 
 [ext_resource type="Script" path="res://player/magnet.gd" id="1_km4l5"]
-[ext_resource type="Script" path="res://Oliver/resource values/resource_float.gd" id="2_o4fi5"]
-
-[sub_resource type="Resource" id="Resource_dsv08"]
-script = ExtResource("2_o4fi5")
-_value = 0.0
+[ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://oliver/resource values/magnet_power.tres" id="2_gyyd1"]
+[ext_resource type="Resource" uid="uid://cuowic855j2c8" path="res://oliver/services/input_service.tres" id="3_h72m3"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n15q0"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ud7b0"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2n7gg"]
-emission_shape = 2
-emission_sphere_radius = 9.2
-angle_min = -720.0
-angle_max = 187.0
-gravity = Vector3(2.08165e-12, -5.55, 2.08165e-12)
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_ay65w"]
-shape = 0
-
 [node name="Magnet Arm" type="Node3D"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.41, -0.75, 2.08165e-12)
 script = ExtResource("1_km4l5")
-power_per_scroll = 1.0
-power = SubResource("Resource_dsv08")
+power_per_scroll = 0.05
+mouse_delta_power = Vector2(0.05, 0.05)
+arm_range_min = Vector3(-0.75, 2.5, 0.5)
+arm_range_max = Vector3(0.75, 3, 2)
+power = ExtResource("2_gyyd1")
+input = ExtResource("3_h72m3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, -5.2318e-16, -3.04919e-24, -3.04919e-24, -3.27835e-08, 0.2, -1.39515e-16, -0.75, -8.74228e-09, 2.08165e-12, 0.07, -0.75)
@@ -37,15 +28,6 @@ transform = Transform3D(2.5, 2.07893e-23, -1.38708e-22, 1.33598e-22, 0.1, 2.7634
 mesh = SubResource("CylinderMesh_ud7b0")
 
 [node name="Magnet" type="Node3D" parent="MeshInstance3D/MeshInstance3D"]
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D/MeshInstance3D/Magnet"]
-transform = Transform3D(1, 5.66875e-24, 8.04428e-24, 3.42936e-22, 1, -2.21079e-15, 8.04427e-24, -9.47315e-17, 1, -4.34861, -4.31229, -2.38419e-07)
-emitting = false
-amount = 20
-trail_enabled = true
-trail_lifetime = 1.94
-process_material = SubResource("ParticleProcessMaterial_2n7gg")
-draw_pass_1 = SubResource("RibbonTrailMesh_ay65w")
 
 [node name="Label" type="Label" parent="."]
 offset_top = -3.0

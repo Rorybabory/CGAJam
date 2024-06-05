@@ -10,7 +10,7 @@ extends Node3D
 
 
 func _ready() -> void:
-	input.input.connect(on_input)
+	input.input_received.connect(on_input)
 
 
 func on_input(event: InputEvent) -> void:

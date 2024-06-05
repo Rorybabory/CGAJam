@@ -2,8 +2,8 @@ class_name InputService
 extends Service
 
 
-signal input(event: InputEvent)
+signal input_received(event: InputEvent)
 
 
 func _input(event: InputEvent) -> void:
-	input.emit(event)
+	input_received.emit(event)

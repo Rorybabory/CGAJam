@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5vgglayax8fn"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_q30h4"]
+[ext_resource type="Texture2D" uid="uid://biq3a5quge6yb" path="res://icon.svg" id="1_te3hq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
+
+[node name="Item" type="RigidBody3D"]
+script = ExtResource("1_q30h4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_v7qg2")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0078
+texture = ExtResource("1_te3hq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
