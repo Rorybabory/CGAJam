@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://teysfd5wxrpx"]
+
+[ext_resource type="Script" path="res://Button/physics_button.gd" id="1_fpiwm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wqtwh"]
+height = 1.34906
+radius = 1.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2lpec"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjq8a"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3avpk"]
+resource_name = "press"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.129919, 2.08165e-12), Vector3(0, -0.681634, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_66ium"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.129919, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jejdx"]
+_data = {
+"RESET": SubResource("Animation_66ium"),
+"press": SubResource("Animation_3avpk")
+}
+
+[node name="Button" type="Area3D" node_paths=PackedStringArray("press_animator") groups=["Button Pressers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+collision_mask = 7
+script = ExtResource("1_fpiwm")
+press_animator = NodePath("AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.257805, 0)
+shape = SubResource("CylinderShape3D_wqtwh")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 2.08165e-12, -0.5, 2.08165e-12)
+mesh = SubResource("CylinderMesh_2lpec")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 0.3, 0, 0, 0, 3, 0, -0.129919, 2.08165e-12)
+mesh = SubResource("CylinderMesh_2lpec")
+surface_material_override/0 = SubResource("StandardMaterial3D_qjq8a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jejdx")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
