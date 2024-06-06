@@ -91,6 +91,9 @@ size = Vector3(3, 3, 3)
 
 [node name="Level" type="Node"]
 
+[node name="Item2" parent="." instance=ExtResource("1_p8g5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.25997)
+
 [node name="Item" parent="." instance=ExtResource("1_p8g5a")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

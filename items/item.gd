@@ -3,7 +3,7 @@ extends Magnetizable
 
 const snap_distance: float = 1
 const magnetized_damping: float = 10
-const magnet_force: float = 3
+const magnet_force: float = 4
 
 var magnet_velocity : Vector3 = Vector3(0,0,0)
 
