@@ -22,6 +22,7 @@ func _magnet_process(power: float, position: Vector3) -> void:
 	var to_magnet: Vector3 = global_position - position
 
 	freeze = to_magnet.length() < snap_distance and power < 0
+	print(freeze)
 	if freeze:
 		global_position = position
 
