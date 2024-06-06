@@ -7,10 +7,19 @@ extends Node3D
 @export var arm_range_max: Vector3
 @export var power: FloatResource
 @export var input_service: InputService
+@export var cursor_raycast: RayCast3D
+@export var magnet_cast_position: Vector2Resource
 
 
 func _ready() -> void:
 	input_service.input_received.connect(on_input_received)
+
+
+func _physics_process(delta: float) -> void:
+	var cast_point = cursor_raycast.get_collision_point()
+	var camera = get_viewport().get_camera_3d()
+	var screen_point = camera.unproject_position(cast_point)
+	magnet_cast_position.value = screen_point
 
 
 func on_input_received(event: InputEvent):

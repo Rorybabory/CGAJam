@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpecpguoxavau"]
+[gd_scene load_steps=11 format=3 uid="uid://cpecpguoxavau"]
 
 [ext_resource type="Texture2D" uid="uid://0as58al6q5ia" path="res://ui/UI.png" id="1_yjx2x"]
 [ext_resource type="Texture2D" uid="uid://clgi8lj8wa1cg" path="res://ui/magnet_charge_marker.png" id="2_h4g86"]
 [ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://Oliver/resource values/magnet_power.tres" id="4_v2pdx"]
 [ext_resource type="Script" path="res://ui/power_slider.gd" id="5_0wbb8"]
+[ext_resource type="Texture2D" uid="uid://b1s0udfu2pebd" path="res://player/magnet_crosshair.png" id="5_tnoll"]
+[ext_resource type="Script" path="res://ui/Magnet Crosshair.gd" id="6_ldq6a"]
+[ext_resource type="Resource" uid="uid://b10v0hqj0t00r" path="res://Oliver/resource values/magnet_cast_position.tres" id="7_isvb0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xytl2"]
 
@@ -24,7 +27,7 @@ scale = Vector2(2, 2)
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_yjx2x")
 
-[node name="VSlider" type="VSlider" parent="UI Position_Scale"]
+[node name="Power Slider" type="VSlider" parent="UI Position_Scale"]
 offset_left = 134.0
 offset_top = -94.0
 offset_right = 154.0
@@ -38,5 +41,12 @@ step = 0.25
 script = ExtResource("5_0wbb8")
 magnet_power = ExtResource("4_v2pdx")
 
-[connection signal="drag_ended" from="UI Position_Scale/VSlider" to="UI Position_Scale/VSlider" method="_on_drag_ended"]
-[connection signal="value_changed" from="UI Position_Scale/VSlider" to="UI Position_Scale/VSlider" method="_on_value_changed"]
+[node name="Magnet Crosshair" type="Sprite2D" parent="."]
+position = Vector2(288, 168)
+scale = Vector2(2, 2)
+texture = ExtResource("5_tnoll")
+script = ExtResource("6_ldq6a")
+magnet_cast_position = ExtResource("7_isvb0")
+
+[connection signal="drag_ended" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_drag_ended"]
+[connection signal="value_changed" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_value_changed"]
