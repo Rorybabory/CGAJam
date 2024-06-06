@@ -3,16 +3,18 @@ extends Magnetizable
 
 const snap_distance: float = 1
 const magnetized_damping: float = 10
-const magnet_force: float = 300
+const magnet_force: float = 200
 
 
-func _magnet_physics_process(power: float, position: Vector3) -> void:
+func _magnet_physics_process(power: float, position: Vector3, direction: Vector3) -> void:
 
-	var to_magnet: Vector3 = global_position - position
+	var to_magnet: Vector3 = (global_position - position).normalized()
 	
+	if (power > 0):
+		to_magnet = direction
 	linear_damp = abs(power) * magnetized_damping
 
-	apply_central_force(to_magnet.normalized() * power * magnet_force)
+	apply_force(to_magnet * power * magnet_force, position)
 
 
 func _magnet_process(power: float, position: Vector3) -> void:

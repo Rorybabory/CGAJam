@@ -26,7 +26,7 @@ func _on_body_exited(body: Node3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	for magnetizable in magnetizables:
-		magnetizable._magnet_physics_process(magnet_power.value, global_position)
+		magnetizable._magnet_physics_process(magnet_power.value, global_position, -get_global_transform().basis.z)
 
 
 func _process(delta: float) -> void:
