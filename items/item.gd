@@ -24,8 +24,8 @@ func _magnet_process(power: float, position: Vector3) -> void:
 	freeze = to_magnet.length() < snap_distance and power < 0
 	if freeze:
 		global_position = position
-	
 
 
 func _stop_magnet_interact() -> void:
 	linear_damp = 0
+	freeze = false
