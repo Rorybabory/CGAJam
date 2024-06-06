@@ -11,6 +11,11 @@ extends Node3D
 @export var magnet_cast_position: Vector2Resource
 
 
+var vertical_percent: float:
+	get: 
+		return inverse_lerp(arm_range_min.y, arm_range_max.y, position.y)
+
+
 func _ready() -> void:
 	input_service.input_received.connect(on_input_received)
 
