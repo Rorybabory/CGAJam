@@ -98,7 +98,6 @@ func handle_input(delta):
 				target_velocity = Vector3(forward.x, 0, forward.z) * delta * (mousePos.y-0.6) * -SPEED * 1000
 				moveTimer += delta * 30
 				cameraOffset += sin(moveTimer) * delta * (mousePos.y-0.6) * 8.0
-				print("backward")
 		
 func _process(delta):
 	target_velocity = Vector3(0,0,0)
