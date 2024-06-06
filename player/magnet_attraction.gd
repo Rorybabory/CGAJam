@@ -36,6 +36,6 @@ func _process(delta: float) -> void:
 	else:
 		target_color = Color(1,0,1).lerp(Color(0,1,1), (magnet_power.value + 1.0)/2.0)
 	mat.albedo_color = mat.albedo_color.lerp(target_color, delta * 3)
-	print("Mesh Color: " + str(mat.albedo_color))
+	#print("Mesh Color: " + str(mat.albedo_color))
 	for magnetizable in magnetizables:
 		magnetizable._magnet_process(magnet_power.value, global_position)
