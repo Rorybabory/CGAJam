@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="1_p8g5a"]
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_6vvtd"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="5_hf1b3"]
-[ext_resource type="Material" uid="uid://dpk31nblsku4s" path="res://textures/Cyberpunk/brickfloor.tres" id="6_m0ful"]
+[ext_resource type="Material" path="res://textures/Cyberpunk/brickfloor.tres" id="6_m0ful"]
 [ext_resource type="Texture2D" uid="uid://dugx1q0ynjjnh" path="res://textures/Cyberpunk/scifi2.png" id="7_0c01r"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
 

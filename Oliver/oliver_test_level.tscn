@@ -1,0 +1,97 @@
+[gd_scene load_steps=17 format=3 uid="uid://cfs72k468jmqv"]
+
+[ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_gsv12"]
+[ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="2_ubd6e"]
+[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_7ac8r"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="4_vct6c"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="5_seem3"]
+[ext_resource type="PackedScene" uid="uid://teysfd5wxrpx" path="res://Button/button.tscn" id="6_yno3b"]
+[ext_resource type="PackedScene" uid="uid://blkdtnujoeojg" path="res://Doors/door.tscn" id="7_euvnl"]
+[ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="7_qdlt5"]
+[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="8_chi0e"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_n3q71"]
+panorama = ExtResource("1_gsv12")
+
+[sub_resource type="Sky" id="Sky_obiwp"]
+sky_material = SubResource("PanoramaSkyMaterial_n3q71")
+
+[sub_resource type="Environment" id="Environment_ryi6t"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_obiwp")
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 2.63
+ssao_intensity = 10.94
+ssao_power = 1.60766
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt40n"]
+albedo_texture = ExtResource("5_seem3")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_et2s6"]
+_surfaces = [{
+"aabb": AABB(-10, -0.5, -7, 19, 1.00001, 14),
+"attribute_data": PackedByteArray(0, 0, 160, 192, 0, 0, 128, 190, 0, 0, 160, 192, 0, 0, 128, 62, 0, 0, 144, 64, 0, 0, 128, 62, 0, 0, 144, 64, 0, 0, 128, 190, 0, 0, 96, 192, 0, 0, 128, 190, 0, 0, 96, 64, 0, 0, 128, 190, 0, 0, 96, 64, 0, 0, 128, 62, 0, 0, 96, 192, 0, 0, 128, 62, 0, 0, 96, 64, 0, 0, 144, 192, 0, 0, 96, 64, 0, 0, 160, 64, 0, 0, 96, 192, 0, 0, 160, 64, 0, 0, 96, 192, 0, 0, 144, 192, 0, 0, 96, 192, 0, 0, 144, 192, 0, 0, 96, 64, 0, 0, 144, 192, 0, 0, 96, 64, 0, 0, 160, 64, 0, 0, 96, 192, 0, 0, 160, 64, 0, 0, 96, 64, 0, 0, 128, 190, 0, 0, 96, 64, 0, 0, 128, 62, 0, 0, 96, 192, 0, 0, 128, 62, 0, 0, 96, 192, 0, 0, 128, 190, 0, 0, 160, 64, 0, 0, 128, 190, 0, 0, 144, 192, 0, 0, 128, 190, 0, 0, 144, 192, 0, 0, 128, 62, 0, 0, 160, 64, 0, 0, 128, 62),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_wt40n"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 64, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 64, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 192, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 64, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 16, 65, 0, 0, 0, 63, 0, 0, 224, 64, 0, 0, 16, 65, 0, 0, 0, 191, 0, 0, 224, 64, 0, 0, 32, 193, 0, 0, 0, 191, 0, 0, 224, 64, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 255, 127, 0, 0, 255, 63, 255, 127, 255, 127, 0, 0, 255, 63, 255, 127, 255, 127, 0, 0, 255, 63, 255, 127, 255, 127, 0, 0, 255, 63)
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_bjubt"]
+vertices = PackedVector3Array(-10, 0.5, -7, -10, -0.5, -7, 9, -0.5, -7, 9, 0.5, -7, -10, 0.5, -7, -10, 0.5, 7, -10, -0.5, 7, -10, -0.5, -7, 9, -0.5, -7, -10, -0.5, -7, -10, -0.5, 7, 9, -0.5, 7, 9, 0.5, -7, 9, 0.5, 7, -10, 0.5, 7, -10, 0.5, -7, 9, 0.5, -7, 9, -0.5, -7, 9, -0.5, 7, 9, 0.5, 7, -10, 0.5, 7, 9, 0.5, 7, 9, -0.5, 7, -10, -0.5, 7)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3kcxi"]
+points = PackedVector3Array(-10, 0.5, -7, -10, -0.5, -7, 9, -0.5, -7, 9, 0.5, -7, -10, 0.5, 7, -10, -0.5, 7, 9, -0.5, 7, 9, 0.5, 7)
+
+[node name="OliverTestLevel" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ryi6t")
+
+[node name="Player" parent="." instance=ExtResource("2_ubd6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76831, 0.929761, 1.27102)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60027, 5.32469, 0)
+light_energy = 14.987
+omni_range = 34.593
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("3_7ac8r")
+local_map_file = "res://maps/oliver_testing.map"
+map_settings = ExtResource("4_vct6c")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_et2s6")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_bjubt")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_3kcxi")
+
+[node name="Button" parent="." node_paths=PackedStringArray("event_node") instance=ExtResource("6_yno3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70922, 1.07609, -3.64668)
+event_node = NodePath("EventNode")
+
+[node name="EventNode" type="Node" parent="Button"]
+script = ExtResource("7_qdlt5")
+
+[node name="Door" parent="." node_paths=PackedStringArray("trigger_node") instance=ExtResource("7_euvnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92128, 4.23722, -1.71606)
+trigger_node = NodePath("../Button/EventNode")
+
+[node name="Item" parent="." instance=ExtResource("8_chi0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36824, 2.49458, 1.09567)
