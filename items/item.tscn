@@ -14,11 +14,11 @@ contact_monitor = true
 script = ExtResource("1_q30h4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0129304, 0, 0.010793)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0129304, 0, 0.010793)
 shape = SubResource("BoxShape3D_v7qg2")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 pixel_size = 0.0078
 billboard = 1
 texture = ExtResource("1_te3hq")

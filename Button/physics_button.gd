@@ -2,6 +2,7 @@ extends Area3D
 
 
 @export var press_animator: AnimationPlayer
+@export var event_node: EventNode
 
 var pressing: Array[Node3D]
 
@@ -29,5 +30,7 @@ func _on_body_exited(body: Node3D) -> void:
 func update_animation() -> void:
 	if pressing.size() > 0:
 		press_animator.play("press", -1, 1)
+		event_node.event.emit()
 	else:
 		press_animator.play("press", -1, -1, true)
+		event_node.event.emit()
