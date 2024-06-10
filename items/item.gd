@@ -30,6 +30,7 @@ func _magnet_process(power: float, position: Vector3) -> void:
 
 	if freeze:
 		global_position = position
+		linear_velocity = Vector3.ZERO
 
 
 func _stop_magnet_interact() -> void:
