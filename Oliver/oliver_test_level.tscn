@@ -95,3 +95,6 @@ trigger_node = NodePath("../Button/EventNode")
 
 [node name="Item" parent="." instance=ExtResource("8_chi0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36824, 2.49458, 1.09567)
+
+[node name="Item2" parent="." instance=ExtResource("8_chi0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36824, 2.49458, -4.01257)
