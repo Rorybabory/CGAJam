@@ -111,6 +111,7 @@ func _process(delta):
 	velocity.z = lerp(velocity.z, target_velocity.z, delta * 5)
 	
 	$CameraPivot/Camera3D.position.y = cameraHeight+cameraOffset
-
+	if (velocity.length() < 2):
+		cameraOffset = lerpf(cameraOffset, 0.0, delta * 10.0)
 	move_and_slide();
 	pass

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dpk31nblsku4s"]
+
+[ext_resource type="Texture2D" uid="uid://drbsn8ettd263" path="res://textures/Cyberpunk/brickfloor.png" id="1_0wuoo"]
+
+[resource]
+albedo_texture = ExtResource("1_0wuoo")
+metallic_specular = 0.0
+texture_filter = 2
