@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b2wv6kyd6p8to"]
+
+[ext_resource type="Texture2D" uid="uid://c5acp5f4r5pli" path="res://textures/Cyberpunk/scifi_tile.png" id="1_43rj1"]
+
+[resource]
+albedo_texture = ExtResource("1_43rj1")
+metallic_specular = 0.0
+texture_filter = 2

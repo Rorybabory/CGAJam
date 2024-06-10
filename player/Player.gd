@@ -106,6 +106,8 @@ func _process(delta):
 
 	if (not is_on_floor()):
 		velocity.y += GRAVITY
+	else:
+		velocity.y = 0
 	handle_input(delta)
 
 	velocity.x = lerp(velocity.x, target_velocity.x, delta * 5)
