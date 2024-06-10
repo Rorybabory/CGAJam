@@ -22,11 +22,12 @@ func _magnet_physics_process(power: float, position: Vector3, direction: Vector3
 	linear_damp = abs(power) * magnetized_damping
 	var distance_percent = (25.0-global_position.distance_to(position))/25.0
 	magnet_velocity = to_magnet * power * magnet_force * distance_percent
+	
 func _magnet_process(power: float, position: Vector3) -> void:
 	var to_magnet: Vector3 = global_position - position
 
 	freeze = to_magnet.length() < snap_distance and power < 0
-	print(freeze)
+
 	if freeze:
 		global_position = position
 
@@ -34,3 +35,4 @@ func _magnet_process(power: float, position: Vector3) -> void:
 func _stop_magnet_interact() -> void:
 	linear_damp = 0
 	freeze = false
+	magnet_velocity = Vector3.ZERO

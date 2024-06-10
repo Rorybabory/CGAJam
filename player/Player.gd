@@ -9,6 +9,7 @@ var _mouse_position : Vector2 = Vector2(0,0)
 var _mouse_velocity : Vector2 = Vector2(0,0)
 var dragging : bool = false
 
+var VERTICAL_TILT_RANGE = 30
 var SPEED = 4
 var ROTATE_SPEED = 8
 var GRAVITY = -9.81
@@ -111,7 +112,14 @@ func _process(delta):
 	velocity.z = lerp(velocity.z, target_velocity.z, delta * 5)
 	
 	$CameraPivot/Camera3D.position.y = cameraHeight+cameraOffset
+<<<<<<< HEAD
 	if (velocity.length() < 2):
 		cameraOffset = lerpf(cameraOffset, 0.0, delta * 10.0)
+=======
+	
+	var tilt_percent = $"CameraPivot/Magnet Arm".vertical_percent
+	$CameraPivot.rotation_degrees.x = VERTICAL_TILT_RANGE * (tilt_percent - 0.5)
+
+>>>>>>> 43edce1a5fc6374678f0ff80910bb0d5a37649e9
 	move_and_slide();
 	pass
