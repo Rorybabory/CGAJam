@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
-[node name="Item" type="RigidBody3D"]
+[node name="Item" type="RigidBody3D" groups=["Button Pressers"]]
 collision_layer = 4
 collision_mask = 3
 continuous_cd = true
