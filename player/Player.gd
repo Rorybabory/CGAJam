@@ -44,11 +44,11 @@ func pickupObject():
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
 	if (result):
 		if (result.collider.is_in_group("Pickupable")):
-			print("hit object: " + result.collider.name)
+			#print("hit object: " + result.collider.name)
 			result.collider.queue_free()
 			Cursor.activeTexture = result.collider.get_node("Sprite").texture
 			Cursor.holdingObject = true
-	print(Cursor.testStr)
+	#print(Cursor.testStr)
 func throwObject():
 	Cursor.holdingObject = false
 	Cursor.activeTexture = null
@@ -65,7 +65,7 @@ func handle_input(delta):
 		(mousePos.x > 0 and mousePos.x < 1 and
 		 mousePos.y > 0 and mousePos.y < 1)):
 		dragging = true
-		print("started dragging at pos: " + str(mousePos) )
+		#print("started dragging at pos: " + str(mousePos) )
 	if (Input.is_action_just_released("action")):
 		dragging = false
 	if (Input.is_action_just_pressed("pickup")):

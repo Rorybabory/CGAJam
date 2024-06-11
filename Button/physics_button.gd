@@ -9,8 +9,6 @@ var pressing: Array[Node3D]
 
 func _on_body_entered(body: Node3D) -> void:
 	
-	print(body.name)
-	
 	if body.is_in_group("Button Pressers"):
 		pressing.append(body)
 		update_animation()

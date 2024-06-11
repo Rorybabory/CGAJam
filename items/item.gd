@@ -9,6 +9,12 @@ var magnet_velocity : Vector3 = Vector3(0,0,0)
 
 var lastFreeze = false
 
+func is_damaging() -> bool:
+	return damaging
+
+var damaging: bool
+
+
 func _integrate_forces(state):
 	linear_velocity += magnet_velocity
 	#linear_velocity += state.total_gravity
@@ -20,9 +26,12 @@ func _magnet_physics_process(power: float, position: Vector3, direction: Vector3
 	
 	if (power > 0):
 		to_magnet = direction
+		
 	linear_damp = abs(power) * magnetized_damping
 	var distance_percent = (25.0-global_position.distance_to(position))/25.0
 	magnet_velocity = to_magnet * power * magnet_force * distance_percent
+	
+	damaging = power > 0
 	
 func _magnet_process(power: float, position: Vector3) -> void:
 	var to_magnet: Vector3 = global_position - position
@@ -44,3 +53,4 @@ func _stop_magnet_interact() -> void:
 	linear_damp = 0
 	freeze = false
 	magnet_velocity = Vector3.ZERO
+	damaging = false
