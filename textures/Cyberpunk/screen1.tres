@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bg5ltw2ig0yqm"]
+
+[ext_resource type="Texture2D" uid="uid://dp0aupdtthutb" path="res://textures/Cyberpunk/screen1.png" id="1_1850r"]
+
+[resource]
+albedo_texture = ExtResource("1_1850r")
+metallic_specular = 0.0
+texture_filter = 2

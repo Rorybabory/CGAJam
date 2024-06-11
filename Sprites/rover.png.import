@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp0aupdtthutb"
-path.s3tc="res://.godot/imported/screen1.png-25897454e495a228250eb40c8c70c828.s3tc.ctex"
+uid="uid://14bra1iu3lyf"
+path="res://.godot/imported/rover.png-43df310659c24d5f4985553206d24103.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Cyberpunk/screen1.png"
-dest_files=["res://.godot/imported/screen1.png-25897454e495a228250eb40c8c70c828.s3tc.ctex"]
+source_file="res://Sprites/rover.png"
+dest_files=["res://.godot/imported/rover.png-43df310659c24d5f4985553206d24103.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

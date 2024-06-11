@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpecpguoxavau"]
+[gd_scene load_steps=13 format=3 uid="uid://cpecpguoxavau"]
 
 [ext_resource type="Texture2D" uid="uid://0as58al6q5ia" path="res://ui/UI.png" id="1_yjx2x"]
 [ext_resource type="Texture2D" uid="uid://clgi8lj8wa1cg" path="res://ui/magnet_charge_marker.png" id="2_h4g86"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://ui/power_slider.gd" id="5_0wbb8"]
 [ext_resource type="Texture2D" uid="uid://b1s0udfu2pebd" path="res://player/magnet_crosshair.png" id="5_tnoll"]
 [ext_resource type="Script" path="res://ui/Magnet Crosshair.gd" id="6_ldq6a"]
-[ext_resource type="Resource" uid="uid://b10v0hqj0t00r" path="res://Oliver/resource values/magnet_cast_position.tres" id="7_isvb0"]
+[ext_resource type="Resource" path="res://Oliver/resource values/magnet_cast_position.tres" id="7_isvb0"]
+[ext_resource type="FontFile" uid="uid://ytnf0khgpb7d" path="res://textures/3x5.ttf" id="8_b80kr"]
+[ext_resource type="Script" path="res://Console/ConsoleText.gd" id="9_fis20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xytl2"]
 
@@ -47,6 +49,15 @@ scale = Vector2(2, 2)
 texture = ExtResource("5_tnoll")
 script = ExtResource("6_ldq6a")
 magnet_cast_position = ExtResource("7_isvb0")
+
+[node name="ConsoleText" type="RichTextLabel" parent="."]
+offset_left = 92.0
+offset_top = 335.0
+offset_right = 417.0
+offset_bottom = 392.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_b80kr")
+script = ExtResource("9_fis20")
 
 [connection signal="drag_ended" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_drag_ended"]
 [connection signal="value_changed" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_value_changed"]

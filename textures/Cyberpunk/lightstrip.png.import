@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp0aupdtthutb"
-path.s3tc="res://.godot/imported/screen1.png-25897454e495a228250eb40c8c70c828.s3tc.ctex"
+uid="uid://but2amdrl5pho"
+path="res://.godot/imported/lightstrip.png-9ef1f02a154d6112da82dd97eb4eb79d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Cyberpunk/screen1.png"
-dest_files=["res://.godot/imported/screen1.png-25897454e495a228250eb40c8c70c828.s3tc.ctex"]
+source_file="res://textures/Cyberpunk/lightstrip.png"
+dest_files=["res://.godot/imported/lightstrip.png-9ef1f02a154d6112da82dd97eb4eb79d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

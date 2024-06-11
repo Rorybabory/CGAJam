@@ -7,6 +7,7 @@ const magnet_force: float = 10
 
 var magnet_velocity : Vector3 = Vector3(0,0,0)
 
+var lastFreeze = false
 
 func _integrate_forces(state):
 	linear_velocity += magnet_velocity
@@ -28,9 +29,15 @@ func _magnet_process(power: float, position: Vector3) -> void:
 
 	freeze = to_magnet.length() < snap_distance and power < 0
 
+	if (freeze == true and lastFreeze == false):
+		Console.message("PICKED UP OBJECT")
+	elif (freeze == false and lastFreeze == true):
+		Console.message("THROW OBJECT")
+
 	if freeze:
 		global_position = position
 		linear_velocity = Vector3.ZERO
+	lastFreeze = freeze
 
 
 func _stop_magnet_interact() -> void:
