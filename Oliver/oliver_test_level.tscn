@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cfs72k468jmqv"]
+[gd_scene load_steps=19 format=3 uid="uid://cfs72k468jmqv"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_gsv12"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="2_ubd6e"]
@@ -6,11 +6,10 @@
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="4_vct6c"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="5_seem3"]
 [ext_resource type="PackedScene" uid="uid://teysfd5wxrpx" path="res://Button/button.tscn" id="6_yno3b"]
+[ext_resource type="PackedScene" uid="uid://6xw74f3dlge2" path="res://enemies/bobot.tscn" id="7_21alf"]
 [ext_resource type="PackedScene" uid="uid://blkdtnujoeojg" path="res://Doors/door.tscn" id="7_euvnl"]
 [ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="7_qdlt5"]
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="8_chi0e"]
-[ext_resource type="Script" path="res://enemies/enemy_health.gd" id="10_1wecq"]
-[ext_resource type="Script" path="res://enemies/bobot_controller.gd" id="10_pjeww"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_n3q71"]
 panorama = ExtResource("1_gsv12")
@@ -27,19 +26,6 @@ ssao_enabled = true
 ssao_radius = 2.63
 ssao_intensity = 10.94
 ssao_power = 1.60766
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5x3xp"]
-height = 6.0
-radius = 3.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_diubs"]
-top_radius = 1.0
-bottom_radius = 2.0
-height = 6.0
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jxsfj"]
-height = 6.0
-radius = 2.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5h5es"]
 vertices = PackedVector3Array(-26.5, 0.75, -22.75, -26.5, 0.75, 24.5, 26, 0.5, 23.75, 26, 0.5, -23.5)
@@ -105,44 +91,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36824, 2.49458, 1.09567)
 [node name="Item2" parent="." groups=["Damages"] instance=ExtResource("8_chi0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36824, 2.49458, -4.01257)
 
-[node name="Bobot" type="CharacterBody3D" parent="." node_paths=PackedStringArray("target", "agent", "death_event")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504675, 1.59627, -14.9983)
-script = ExtResource("10_pjeww")
-speed = 3.0
+[node name="Bobot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_21alf")]
 target = NodePath("../Player")
-agent = NodePath("NavigationAgent3D")
-death_event = NodePath("Health/Death Event")
-
-[node name="Health" type="Area3D" parent="Bobot" node_paths=PackedStringArray("death_event")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-collision_mask = 7
-script = ExtResource("10_1wecq")
-max_health = 3
-death_event = NodePath("Death Event")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bobot/Health"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-shape = SubResource("CylinderShape3D_5x3xp")
-
-[node name="Death Event" type="Node" parent="Bobot/Health"]
-script = ExtResource("7_qdlt5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bobot"]
-mesh = SubResource("CylinderMesh_diubs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bobot"]
-shape = SubResource("CylinderShape3D_jxsfj")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Bobot"]
-path_desired_distance = 4.0
-target_desired_distance = 10.0
-path_max_distance = 565.01
-height = 6.0
-radius = 2.0
-avoidance_layers = 0
-avoidance_mask = 0
-debug_enabled = true
-debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_5h5es")
@@ -162,5 +112,3 @@ occluder = SubResource("ArrayOccluder3D_et8v6")
 
 [node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_mxv8v")
-
-[connection signal="body_entered" from="Bobot/Health" to="Bobot/Health" method="_on_body_entered"]

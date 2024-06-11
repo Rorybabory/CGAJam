@@ -17,20 +17,18 @@ height = 6.0
 height = 6.0
 radius = 2.0
 
-[node name="Bobot" type="CharacterBody3D" node_paths=PackedStringArray("target", "agent", "death_event")]
+[node name="Bobot" type="CharacterBody3D" node_paths=PackedStringArray("agent", "death_event")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504675, 1.59627, -14.9983)
 script = ExtResource("1_51ts6")
 speed = 3.0
-target = NodePath("")
-agent = NodePath("")
-death_event = NodePath("")
+agent = NodePath("NavigationAgent3D")
+death_event = NodePath("Health/Death Event")
 
-[node name="Health" type="Area3D" parent="." node_paths=PackedStringArray("death_event")]
+[node name="Health" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 collision_mask = 7
 script = ExtResource("2_7rgg5")
 max_health = 3
-death_event = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Health"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -53,7 +51,6 @@ height = 6.0
 radius = 2.0
 avoidance_layers = 0
 avoidance_mask = 0
-debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="Health" to="Health" method="_on_body_entered"]
