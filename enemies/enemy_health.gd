@@ -19,4 +19,5 @@ func _on_body_entered(body: Node3D) -> void:
 		current_health -= 1
 
 		if current_health <= 0:
+			Console.message("ENEMY KILLED")
 			death_event.event.emit()

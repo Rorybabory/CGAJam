@@ -133,7 +133,7 @@ transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-
 open_offset = Vector3(10, 2.08165e-12, 2.08165e-12)
 trigger_node = NodePath("../Button/EventNode")
 
-[node name="Item" parent="." groups=["Damages"] instance=ExtResource("8_chi0e")]
+[node name="Item" parent="." instance=ExtResource("8_chi0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2312, 2.49458, -18.4691)
 
 [node name="Bobot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_21alf")]
