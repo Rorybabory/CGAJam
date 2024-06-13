@@ -21,7 +21,6 @@ func _integrate_forces(state):
 	
 
 func _magnet_physics_process(power: float, position: Vector3, direction: Vector3) -> void:
-
 	var to_magnet: Vector3 = (global_position - position).normalized()
 	
 	if (power > 0):
@@ -47,7 +46,6 @@ func _magnet_process(power: float, position: Vector3) -> void:
 		global_position = position
 		linear_velocity = Vector3.ZERO
 	lastFreeze = freeze
-
 
 func _stop_magnet_interact() -> void:
 	linear_damp = 0
