@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cddujwv63egm2"
+path="res://.godot/imported/oliver_testing.3.map-a36dfe24e774a9cfc1c551b9ca3185df.tres"
+
+[deps]
+
+source_file="res://maps/autosave/oliver_testing.3.map"
+dest_files=["res://.godot/imported/oliver_testing.3.map-a36dfe24e774a9cfc1c551b9ca3185df.tres"]
+
+[params]
+
