@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5vgglayax8fn"]
+[gd_scene load_steps=5 format=3 uid="uid://b5vgglayax8fn"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_q30h4"]
-[ext_resource type="Texture2D" uid="uid://14bra1iu3lyf" path="res://Sprites/rover.png" id="2_w73u5"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_es4py"]
+[ext_resource type="Texture2D" uid="uid://14bra1iu3lyf" path="res://Sprites/rover.png" id="2_vs85a"]
+[ext_resource type="Script" path="res://items/smallRobot.gd" id="3_qxiql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
@@ -14,7 +15,7 @@ axis_lock_angular_z = true
 continuous_cd = true
 max_contacts_reported = 20
 contact_monitor = true
-script = ExtResource("1_q30h4")
+script = ExtResource("1_es4py")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
@@ -25,6 +26,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.10282, 0)
 pixel_size = 0.025
 billboard = 1
 texture_filter = 0
-texture = ExtResource("2_w73u5")
+texture = ExtResource("2_vs85a")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Navigator" type="Node" parent="."]
+script = ExtResource("3_qxiql")

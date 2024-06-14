@@ -25,10 +25,10 @@ func _ready() -> void:
 	death_event.event.connect(die)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
-func move_to_target(delta):
+func move_to_target(_delta):
 	agent.target_position = target.global_position
 	
 	var current_position = global_position

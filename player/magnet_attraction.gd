@@ -53,7 +53,7 @@ func by_cross(m1: Magnetizable, m2: Magnetizable) -> bool:
 	return get_cross(m2) > get_cross(m1)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 	var valid = magnetizables.filter(within_view)
 	valid.sort_custom(by_cross)
@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		for magnetizable in valid:
 			magnetizable._magnet_physics_process(magnet_power.value, global_position, forward)
-			global_rotation
+			
 
 
 func _process(delta: float) -> void:

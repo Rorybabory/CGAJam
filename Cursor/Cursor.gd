@@ -23,7 +23,7 @@ func normalized_mouse():
 	mousePos /= get_viewport().get_visible_rect().size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	normalized_mouse()
 	if (Cursor.activeTexture):
 		texture = Cursor.activeTexture

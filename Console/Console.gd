@@ -11,16 +11,16 @@ func _ready():
 func getConsoleText():
 	return consoleText
 
-func message(str : String):
+func message(messageStr : String):
 	if (lineOne == ""):
-		lineOne = str
+		lineOne = messageStr
 	elif (lineTwo == ""):
-		lineTwo = str
+		lineTwo = messageStr
 	else:
 		lineOne = lineTwo
-		lineTwo = str
+		lineTwo = messageStr
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	consoleText = lineOne + "\n" + lineTwo
 	pass

@@ -5,8 +5,8 @@ signal mouse_changed(mousePosition : Vector2);
 
 var test_object = preload("res://Sprites/test_object.tscn")
 
-var _mouse_position : Vector2 = Vector2(0,0)
-var _mouse_velocity : Vector2 = Vector2(0,0)
+
+
 var dragging : bool = false
 
 var VERTICAL_TILT_RANGE = 30

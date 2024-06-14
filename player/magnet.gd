@@ -20,7 +20,7 @@ func _ready() -> void:
 	input_service.input_received.connect(on_input_received)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var cast_point = cursor_raycast.get_collision_point()
 	var camera = get_viewport().get_camera_3d()
 	var screen_point = camera.unproject_position(cast_point)

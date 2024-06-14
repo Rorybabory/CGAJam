@@ -1,7 +1,7 @@
 [gd_scene load_steps=72 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
-[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="1_p8g5a"]
+[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_dpjgp"]
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_6vvtd"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="5_hf1b3"]
 [ext_resource type="Material" uid="uid://dpk31nblsku4s" path="res://textures/Cyberpunk/brickfloor.tres" id="6_m0ful"]
@@ -297,13 +297,13 @@ points = PackedVector3Array(-0.5, 11, 21, -0.5, 0.5, 21, 0, 0.5, 21, 0, 11, 21, 
 
 [node name="Level" type="Node"]
 
-[node name="Item2" parent="." instance=ExtResource("1_p8g5a")]
+[node name="Item2" parent="." instance=ExtResource("1_dpjgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53661, 2.37996, 4.49923)
 
-[node name="Item3" parent="." instance=ExtResource("1_p8g5a")]
+[node name="Item3" parent="." instance=ExtResource("1_dpjgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98832, 2.37996, 4.49923)
 
-[node name="Item" parent="." instance=ExtResource("1_p8g5a")]
+[node name="Item" parent="." instance=ExtResource("1_dpjgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331415, 2.37996, 3.42929)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

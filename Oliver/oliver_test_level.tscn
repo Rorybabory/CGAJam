@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6xw74f3dlge2" path="res://enemies/bobot.tscn" id="7_21alf"]
 [ext_resource type="PackedScene" uid="uid://blkdtnujoeojg" path="res://Doors/door.tscn" id="7_euvnl"]
 [ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="7_qdlt5"]
-[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/item.tscn" id="8_chi0e"]
+[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="8_chi0e"]
 [ext_resource type="Texture2D" uid="uid://yca1fb058dgo" path="res://textures/Cyberpunk/floortile.png" id="10_lvlol"]
 [ext_resource type="Texture2D" uid="uid://bocvbqnmlruy" path="res://textures/Cyberpunk/metalplate3.png" id="11_o5dqf"]
 
