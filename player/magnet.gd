@@ -10,6 +10,14 @@ extends Node3D
 @export var cursor_raycast: RayCast3D
 @export var magnet_cast_position: Vector2Resource
 
+@export var min_sound_pitch: float
+@export var max_sound_pitch: float
+@export var max_volume_power_threshold: float
+@export var max_volume: float
+
+@export var pulling_sound: AudioStreamPlayer3D
+@export var pushing_sound: AudioStreamPlayer3D
+
 
 var vertical_percent: float:
 	get: 
@@ -25,6 +33,17 @@ func _physics_process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_3d()
 	var screen_point = camera.unproject_position(cast_point)
 	magnet_cast_position.value = screen_point
+
+
+func calculate_volume(power: float) -> float:
+	return remap(power, 0, max_volume_power_threshold, -80, max_volume)
+
+
+func _process(delta: float) -> void:
+	pulling_sound.volume_db = calculate_volume(-power.value)
+	pushing_sound.volume_db = calculate_volume(power.value)
+	pulling_sound.pitch_scale = lerp(min_sound_pitch, max_sound_pitch, -power.value)
+	pushing_sound.pitch_scale = lerp(min_sound_pitch, max_sound_pitch, power.value)
 
 
 func on_input_received(event: InputEvent):
