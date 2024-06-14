@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck8xlu1eq18ij"]
+[gd_scene load_steps=13 format=3 uid="uid://ck8xlu1eq18ij"]
 
 [ext_resource type="Script" path="res://player/magnet.gd" id="1_km4l5"]
 [ext_resource type="Resource" uid="uid://bd44cv2ashl4t" path="res://Oliver/resource values/magnet_power.tres" id="2_gyyd1"]
@@ -7,6 +7,8 @@
 [ext_resource type="ArrayMesh" uid="uid://uf5mxb0tspgo" path="res://player/magnetMesh.obj" id="4_o2u37"]
 [ext_resource type="Texture2D" uid="uid://bm6ykotrbrnyc" path="res://player/magnet_texture.png" id="4_opk8g"]
 [ext_resource type="Script" path="res://player/magnet_attraction.gd" id="4_pxryp"]
+[ext_resource type="AudioStream" uid="uid://cy2tds5shmwmc" path="res://player/pulling 3.wav" id="8_si36m"]
+[ext_resource type="AudioStream" uid="uid://n20qwehgpfoc" path="res://player/pushing 3.wav" id="9_2hhnq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlvmm"]
 cull_mode = 2
@@ -20,7 +22,7 @@ radius = 25.0
 height = 0.15
 radius = 0.25
 
-[node name="Magnet Arm" type="Node3D" node_paths=PackedStringArray("cursor_raycast")]
+[node name="Magnet Arm" type="Node3D" node_paths=PackedStringArray("cursor_raycast", "pulling_sound", "pushing_sound")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.41, -0.75, 2.08165e-12)
 script = ExtResource("1_km4l5")
 power_per_scroll = 0.05
@@ -31,6 +33,10 @@ power = ExtResource("2_gyyd1")
 input_service = ExtResource("3_h72m3")
 cursor_raycast = NodePath("Magnet Tip/RayCast3D")
 magnet_cast_position = ExtResource("4_h3ixu")
+max_sound_pitch = 1.0
+max_volume_power_threshold = 0.25
+pulling_sound = NodePath("Pulling Sound")
+pushing_sound = NodePath("Pushing Sound")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.02722e-08, 0.25, 1.02722e-08, 1.6393e-16, -1.09278e-08, 0.235, 0.235, 1.09278e-08, -5.49806e-16, 0, 0, -0.759818)
@@ -60,6 +66,14 @@ shape = SubResource("CylinderShape3D_yyvrn")
 [node name="RayCast3D" type="RayCast3D" parent="Magnet Tip"]
 transform = Transform3D(1, -3.48787e-16, -3.48788e-16, -3.48788e-16, -4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 target_position = Vector3(2.08165e-12, 2.08165e-12, -100)
+
+[node name="Pulling Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_si36m")
+autoplay = true
+
+[node name="Pushing Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_2hhnq")
+autoplay = true
 
 [connection signal="body_entered" from="Magnet Collision" to="Magnet Collision" method="_on_body_entered"]
 [connection signal="body_exited" from="Magnet Collision" to="Magnet Collision" method="_on_body_exited"]
