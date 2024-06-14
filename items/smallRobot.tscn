@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_es4py"]
 [ext_resource type="Texture2D" uid="uid://14bra1iu3lyf" path="res://Sprites/rover.png" id="2_vs85a"]
-[ext_resource type="Script" path="res://items/smallRobot.gd" id="3_qxiql"]
+[ext_resource type="Script" path="res://items/SmallRobot.gd" id="3_4ub4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
@@ -28,5 +28,9 @@ billboard = 1
 texture_filter = 0
 texture = ExtResource("2_vs85a")
 
+[node name="FloorCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.259355, 0)
+target_position = Vector3(0, -0.595, 0)
+
 [node name="Navigator" type="Node" parent="."]
-script = ExtResource("3_qxiql")
+script = ExtResource("3_4ub4k")
