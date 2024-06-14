@@ -300,6 +300,9 @@ points = PackedVector3Array(-0.5, 11, 21, -0.5, 0.5, 21, 0, 0.5, 21, 0, 11, 21, 
 [node name="Item2" parent="." instance=ExtResource("1_p8g5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53661, 2.37996, 4.49923)
 
+[node name="Item3" parent="." instance=ExtResource("1_p8g5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98832, 2.37996, 4.49923)
+
 [node name="Item" parent="." instance=ExtResource("1_p8g5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331415, 2.37996, 3.42929)
 

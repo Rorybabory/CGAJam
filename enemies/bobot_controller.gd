@@ -8,6 +8,8 @@ extends CharacterBody3D
 @export var walkInterval: float = 1.0
 enum states {STANDING, WALKING, ATTACKING}
 
+
+
 var currentState = states.WALKING
 var stateTimer : float = 0.0
 var sprites = {
@@ -24,7 +26,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
+	move_and_slide()
+
+func move_to_target(delta):
 	agent.target_position = target.global_position
 	
 	var current_position = global_position
@@ -32,8 +36,6 @@ func _physics_process(delta: float) -> void:
 	var direction = (next_position - current_position).normalized()
 
 	velocity = direction * speed
-	
-	move_and_slide()
 
 func _process(delta):
 	stateTimer += delta
@@ -45,8 +47,16 @@ func _process(delta):
 			if (stateTimer > walkInterval):
 				stateTimer = 0
 			$Sprite3D.flip_h = stateTimer < (walkInterval/2.0)
+			move_to_target(delta)
 		states.ATTACKING:
 			pass
+	$Sprite3D.modulate = $Sprite3D.modulate.lerp(Color(1,1,1), delta * 3)
 
 func die() -> void:
 	queue_free()
+
+
+func _on_health_damaged():
+	Console.message("ENEMY HIT")
+	$Sprite3D.modulate = Color(0.0,0.0,0.0)
+	pass # Replace with function body.
