@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://w2xalq2tnh5e"]
 
-[ext_resource type="PackedScene" uid="uid://c0qjepbwnxj1h" path="res://testLevel.tscn" id="1_eh43v"]
+[ext_resource type="PackedScene" uid="uid://c66refr54nush" path="res://maps/firstLevel.tscn" id="1_4umob"]
 [ext_resource type="PackedScene" uid="uid://cpecpguoxavau" path="res://ui/ui.tscn" id="2_ga5rt"]
 
 [node name="Node" type="Node"]
@@ -15,6 +15,6 @@ audio_listener_enable_3d = true
 size = Vector2i(576, 336)
 render_target_update_mode = 4
 
-[node name="Level" parent="SubViewportContainer/Viewport" instance=ExtResource("1_eh43v")]
+[node name="Level" parent="SubViewportContainer/Viewport" instance=ExtResource("1_4umob")]
 
 [node name="UI" parent="SubViewportContainer" instance=ExtResource("2_ga5rt")]

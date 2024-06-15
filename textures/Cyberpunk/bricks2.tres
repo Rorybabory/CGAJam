@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7k85r1b4l1gh"]
+
+[ext_resource type="Texture2D" uid="uid://ctkid3sik3cr2" path="res://textures/Cyberpunk/bricks2.png" id="1_jnbam"]
+
+[resource]
+albedo_texture = ExtResource("1_jnbam")
+metallic_specular = 0.0
+emission_enabled = true
+emission_energy_multiplier = 4.35
+texture_filter = 2

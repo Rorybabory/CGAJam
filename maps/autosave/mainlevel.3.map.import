@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cai3crl85fcna"
+path="res://.godot/imported/mainlevel.3.map-3a168f928f1c1b8e4e53a7f50f882cbb.tres"
+
+[deps]
+
+source_file="res://maps/autosave/mainlevel.3.map"
+dest_files=["res://.godot/imported/mainlevel.3.map-3a168f928f1c1b8e4e53a7f50f882cbb.tres"]
+
+[params]
+

@@ -10,4 +10,6 @@ func _ready():
 func _process(delta):
 	var garbage = get_tree().get_nodes_in_group("Garbage").size()
 	text = "TRASH: " + str(garbage) + "/" + str(startGarbage)
+	if (garbage <= 0):
+		get_node("../TrashCollected").show()
 	pass

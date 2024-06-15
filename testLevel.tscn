@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://c0qjepbwnxj1h"]
+[gd_scene load_steps=77 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_dpjgp"]
@@ -10,11 +10,8 @@
 [ext_resource type="Material" uid="uid://dtuo5mhrobbs5" path="res://textures/Cyberpunk/sci-fi_tile4.tres" id="9_m387y"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="9_rrew1"]
 [ext_resource type="Material" uid="uid://cwtjfwuxi4g50" path="res://textures/Cyberpunk/scifi_tile2.tres" id="9_xkv5l"]
-[ext_resource type="PackedScene" uid="uid://blkdtnujoeojg" path="res://Doors/door.tscn" id="10_cyv0n"]
-[ext_resource type="PackedScene" uid="uid://teysfd5wxrpx" path="res://Button/button.tscn" id="11_fph4h"]
 [ext_resource type="Material" uid="uid://ccgv4i22e3l48" path="res://textures/Cyberpunk/scifi_tile3.tres" id="11_imxc0"]
 [ext_resource type="Material" uid="uid://i8atwc73i1s8" path="res://textures/Cyberpunk/steel.tres" id="12_0dvw3"]
-[ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="12_vbk6p"]
 [ext_resource type="Material" uid="uid://bg5ltw2ig0yqm" path="res://textures/Cyberpunk/screen1.tres" id="13_8yo0g"]
 [ext_resource type="Material" uid="uid://cvmft4nbxiujj" path="res://textures/Cyberpunk/lightstrip.tres" id="14_l2sqs"]
 [ext_resource type="PackedScene" uid="uid://dfqi5cjybh7ph" path="res://items/box.tscn" id="19_mgqja"]
@@ -488,18 +485,6 @@ shape = SubResource("ConvexPolygonShape3D_07567")
 
 [node name="entity_0_brush_46_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_crrso")
-
-[node name="Door" parent="." node_paths=PackedStringArray("trigger_node") instance=ExtResource("10_cyv0n")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.98, 4.98547, 44.4002)
-open_offset = Vector3(-8, 0, 0)
-trigger_node = NodePath("../Button/EventNode")
-
-[node name="Button" parent="." node_paths=PackedStringArray("event_node") instance=ExtResource("11_fph4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06595, 1.58052, 15.8072)
-event_node = NodePath("EventNode")
-
-[node name="EventNode" type="Node" parent="Button"]
-script = ExtResource("12_vbk6p")
 
 [node name="Box" parent="." instance=ExtResource("19_mgqja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2975, 1.57474, -2.10243)

@@ -24,5 +24,6 @@ func _on_trigger_body_entered(body):
 		$Explosion.pitch_scale = randf_range(0.6, 1.2)
 		$Explosion.play()
 		body.queue_free()
-		$Light.light_energy = 180
+		$Light.light_energy = 280
+		
 	pass # Replace with function body.
