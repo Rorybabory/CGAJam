@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgmcxln0gcs0y"]
+[gd_scene load_steps=11 format=3 uid="uid://bgmcxln0gcs0y"]
 
 [ext_resource type="Shader" path="res://CRT.gdshader" id="1_akbi4"]
 [ext_resource type="PackedScene" uid="uid://w2xalq2tnh5e" path="res://game_view.tscn" id="2_jgcwc"]
 [ext_resource type="Script" path="res://Cursor/Cursor.gd" id="6_1dnb6"]
+[ext_resource type="PackedScene" uid="uid://bkctv71qrg0pi" path="res://main menu/main_menu.tscn" id="6_owlwh"]
 [ext_resource type="Shader" path="res://post.gdshader" id="11_aqgoj"]
 [ext_resource type="Texture2D" uid="uid://bflxbblcv3qat" path="res://bayer16tile2.png" id="12_ecggo"]
 
@@ -77,10 +78,14 @@ audio_listener_enable_3d = true
 size = Vector2i(640, 400)
 render_target_update_mode = 4
 
-[node name="GameView" parent="SubViewportContainer/SubViewport/Palettize/mainViewport" instance=ExtResource("2_jgcwc")]
+[node name="Game View Parent" type="Node" parent="SubViewportContainer/SubViewport/Palettize/mainViewport"]
 
 [node name="Cursor" type="Sprite2D" parent="SubViewportContainer/SubViewport/Palettize/mainViewport"]
 texture_filter = 1
 position = Vector2(556, 619)
 scale = Vector2(4, 4)
 script = ExtResource("6_1dnb6")
+
+[node name="MainMenu" parent="SubViewportContainer/SubViewport/Palettize/mainViewport" node_paths=PackedStringArray("level_scene_parent") instance=ExtResource("6_owlwh")]
+level_scene_parent = NodePath("../Game View Parent")
+start_scene = ExtResource("2_jgcwc")
