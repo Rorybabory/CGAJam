@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8bcx40s7rjpg"]
+
+[ext_resource type="PackedScene" uid="uid://cerwqi6y1q5fd" path="res://items/garbage.tscn" id="1_0m8ds"]
+[ext_resource type="Texture2D" uid="uid://b8o7bw70g33jr" path="res://Sprites/brick.png" id="2_ccbnj"]
+
+[node name="Item" instance=ExtResource("1_0m8ds")]
+
+[node name="Sprite3D" parent="." index="1"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.441471, 0)
+texture = ExtResource("2_ccbnj")

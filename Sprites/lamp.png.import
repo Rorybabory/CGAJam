@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8o7bw70g33jr"
-path="res://.godot/imported/brick.png-b95ec73c70364c1639d7f6bb53031bf8.ctex"
+uid="uid://cnxqquam48ico"
+path="res://.godot/imported/lamp.png-1a227ca3dffc7760fcf5256dfbaf6676.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/brick.png"
-dest_files=["res://.godot/imported/brick.png-b95ec73c70364c1639d7f6bb53031bf8.ctex"]
+source_file="res://Sprites/lamp.png"
+dest_files=["res://.godot/imported/lamp.png-1a227ca3dffc7760fcf5256dfbaf6676.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

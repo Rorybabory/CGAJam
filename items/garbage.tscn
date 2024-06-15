@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cerwqi6y1q5fd"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_wid1k"]
+[ext_resource type="Texture2D" uid="uid://5mgn2j4uqcc2" path="res://Sprites/trashbag.png" id="2_lxixi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
+size = Vector3(0.826185, 1, 0.802487)
+
+[node name="Item" type="RigidBody3D" groups=["Button Pressers", "Damages", "Garbage"]]
+collision_layer = 4
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+continuous_cd = true
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_wid1k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0270629, 1.0842, -0.0327118)
+shape = SubResource("BoxShape3D_v7qg2")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.15608, 0)
+pixel_size = 0.035
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_lxixi")

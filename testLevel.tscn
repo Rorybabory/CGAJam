@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://c0qjepbwnxj1h"]
+[gd_scene load_steps=80 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_dpjgp"]
@@ -20,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://dfqi5cjybh7ph" path="res://items/box.tscn" id="19_mgqja"]
 [ext_resource type="AudioStream" uid="uid://cvxrc01jogn1q" path="res://music/music.ogg" id="20_2nknq"]
 [ext_resource type="PackedScene" uid="uid://btdhdp5ertnuf" path="res://Incinerator/Incinerator.tscn" id="20_me4fk"]
+[ext_resource type="PackedScene" uid="uid://cerwqi6y1q5fd" path="res://items/garbage.tscn" id="21_ne3th"]
+[ext_resource type="PackedScene" uid="uid://cei5v6qbf7x5b" path="res://items/chair.tscn" id="22_s4jl2"]
+[ext_resource type="PackedScene" uid="uid://b8bcx40s7rjpg" path="res://items/brick.tscn" id="23_moep8"]
+[ext_resource type="PackedScene" uid="uid://ckejuxvv6gap" path="res://items/trash1.tscn" id="24_cxphq"]
+[ext_resource type="PackedScene" uid="uid://d2skjvi8fgoo" path="res://items/trash2.tscn" id="25_irql0"]
+[ext_resource type="PackedScene" uid="uid://nl3xg1dwg712" path="res://items/trashcan.tscn" id="26_eaoua"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("1_bbgtc")
@@ -501,6 +507,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2975, 1.57474, -2.10243)
 [node name="Incinerator" parent="." instance=ExtResource("20_me4fk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6305, 1, -19.1079)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_2nknq")
+volume_db = -16.1
 autoplay = true
+
+[node name="Item4" parent="." instance=ExtResource("21_ne3th")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 7)
+
+[node name="Item5" parent="." instance=ExtResource("22_s4jl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 1)
+
+[node name="Item6" parent="." instance=ExtResource("23_moep8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 6)
+
+[node name="Item7" parent="." instance=ExtResource("24_cxphq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, 5)
+
+[node name="Item8" parent="." instance=ExtResource("25_irql0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -2)
+
+[node name="Item9" parent="." instance=ExtResource("26_eaoua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, 10)

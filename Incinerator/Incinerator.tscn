@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btdhdp5ertnuf"]
+[gd_scene load_steps=11 format=3 uid="uid://btdhdp5ertnuf"]
 
 [ext_resource type="ArrayMesh" uid="uid://blw4v00iovvuw" path="res://Incinerator/mesh.obj" id="1_8rctw"]
 [ext_resource type="Script" path="res://Incinerator/Incinerator.gd" id="1_vlj65"]
@@ -14,6 +14,9 @@ texture_filter = 0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1bisw"]
 height = 8.54498
 radius = 9.58534
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06gba"]
+size = Vector3(11.188, 9.81488, 15.9888)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b1r05"]
 height = 5.06931
@@ -73,6 +76,10 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.7787, 0)
 shape = SubResource("CylinderShape3D_1bisw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09399, 4.40744, -0.1521)
+shape = SubResource("BoxShape3D_06gba")
 
 [node name="Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.341, 0)

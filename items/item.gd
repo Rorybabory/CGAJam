@@ -40,7 +40,7 @@ func _magnet_process(power: float, target_pos : Vector3) -> void:
 	if (freeze == true and lastFreeze == false):
 		Console.message("PICKED UP OBJECT")
 		if ($Sprite3D != null):
-			$Sprite3D.modulate.a = 0.025
+			$Sprite3D.modulate.a = 0.04
 	elif (freeze == false and lastFreeze == true):
 		Console.message("THROW OBJECT")
 		if (get_node("Sprite3D") != null):

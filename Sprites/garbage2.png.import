@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8o7bw70g33jr"
-path="res://.godot/imported/brick.png-b95ec73c70364c1639d7f6bb53031bf8.ctex"
+uid="uid://ctahu3qyq4rnd"
+path="res://.godot/imported/garbage2.png-6f6de33a4fdc13dbdbe7c8fd911c9602.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/brick.png"
-dest_files=["res://.godot/imported/brick.png-b95ec73c70364c1639d7f6bb53031bf8.ctex"]
+source_file="res://Sprites/garbage2.png"
+dest_files=["res://.godot/imported/garbage2.png-6f6de33a4fdc13dbdbe7c8fd911c9602.ctex"]
 
 [params]
 
