@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://c0qjepbwnxj1h"]
+[gd_scene load_steps=73 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_dpjgp"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="12_vbk6p"]
 [ext_resource type="Material" uid="uid://bg5ltw2ig0yqm" path="res://textures/Cyberpunk/screen1.tres" id="13_8yo0g"]
 [ext_resource type="Material" uid="uid://cvmft4nbxiujj" path="res://textures/Cyberpunk/lightstrip.tres" id="14_l2sqs"]
-[ext_resource type="PackedScene" uid="uid://6xw74f3dlge2" path="res://enemies/bobot.tscn" id="18_dx48b"]
 [ext_resource type="PackedScene" uid="uid://dfqi5cjybh7ph" path="res://items/box.tscn" id="19_mgqja"]
 [ext_resource type="PackedScene" uid="uid://btdhdp5ertnuf" path="res://Incinerator/Incinerator.tscn" id="20_me4fk"]
 
@@ -494,11 +493,6 @@ event_node = NodePath("EventNode")
 
 [node name="EventNode" type="Node" parent="Button"]
 script = ExtResource("12_vbk6p")
-
-[node name="Bobot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_dx48b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54968, 1.45918, -3.36488)
-speed = 1.0
-target = NodePath("../Player")
 
 [node name="Box" parent="." instance=ExtResource("19_mgqja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2975, 1.57474, -2.10243)

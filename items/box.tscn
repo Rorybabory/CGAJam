@@ -7,7 +7,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_ropt0"]
 size = Vector3(3, 3, 3)
 
-[node name="Box" type="RigidBody3D" groups=["Button Pressers", "Damages"]]
+[node name="Box" type="RigidBody3D" groups=["Button Pressers", "Damages", "Garbage"]]
 collision_layer = 4
 collision_mask = 3
 axis_lock_angular_x = true
