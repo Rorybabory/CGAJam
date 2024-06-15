@@ -1,6 +1,8 @@
 extends Node3D
 
-
+var timer : float = 0.0
+var timerTarget : float = 0.5
+var lightValue : float = 15
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -8,7 +10,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Light.light_energy = lerpf($Light.light_energy, 15, delta * 8)
+	timer += delta
+	if (timer > timerTarget):
+		timer = 0
+		timerTarget = randf_range(0.04, 0.3)
+		lightValue = randf_range(8, 30)
+	$Light.light_energy = lerpf($Light.light_energy, lightValue, delta * 8)
 	pass
 
 
