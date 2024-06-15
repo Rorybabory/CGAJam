@@ -1,14 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfqi5cjybh7ph"]
+[gd_scene load_steps=4 format=3 uid="uid://dfqi5cjybh7ph"]
 
-[ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_m8jxc"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_k6pp6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ropt0"]
 size = Vector3(3, 3, 3)
 
-[node name="Box" instance=ExtResource("1_m8jxc")]
+[node name="Box" type="RigidBody3D" groups=["Button Pressers", "Damages"]]
+collision_layer = 4
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+continuous_cd = true
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_k6pp6")
 
-[node name="Sprite3D" parent="." index="1"]
-visible = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_v7qg2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48348, 0)
 mesh = SubResource("BoxMesh_ropt0")

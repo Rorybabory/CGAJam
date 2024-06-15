@@ -45,12 +45,11 @@ func get_cross(magnetizable: Magnetizable) -> float:
 
 
 func within_view(magnetizable: Magnetizable) -> bool:
-
 	return get_cross(magnetizable) > magnetize_dot
 
 
 func by_cross(m1: Magnetizable, m2: Magnetizable) -> bool:
-	return get_cross(m2) > get_cross(m1)
+	return get_cross(m2) < get_cross(m1)
 
 
 func _physics_process(_delta: float) -> void:

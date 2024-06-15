@@ -23,8 +23,8 @@ func _process(delta):
 	
 	var vel : Vector3 = (direction * speed)
 	
-	if (get_node("../FloorCheck").is_colliding()):
-		print("isOnFloor: " + root.name)
+	if (get_node("../FloorCheck").is_colliding() and root.magnet_velocity.length() < 1.0):
+
 		root.linear_velocity = Vector3(vel.x, root.linear_velocity.y, vel.z)
 	
 	pass

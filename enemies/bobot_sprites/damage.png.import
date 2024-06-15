@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy3jgirvpy4db"
-path="res://.godot/imported/attack1.png-ecabd3907e7a775ed5e6d4c47bf876fa.ctex"
+uid="uid://d0uc7djp0ddwk"
+path="res://.godot/imported/damage.png-767cf86cf1cad6469847248581fc5011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/bobot_sprites/attack1.png"
-dest_files=["res://.godot/imported/attack1.png-ecabd3907e7a775ed5e6d4c47bf876fa.ctex"]
+source_file="res://enemies/bobot_sprites/damage.png"
+dest_files=["res://.godot/imported/damage.png-767cf86cf1cad6469847248581fc5011.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

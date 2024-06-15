@@ -36,14 +36,19 @@ func _physics_process(_delta: float) -> void:
 
 
 func calculate_volume(power: float) -> float:
-	return remap(power, 0, max_volume_power_threshold, -80, max_volume)
+	return remap(power, 0, max_volume_power_threshold, -120, max_volume)
 
 
 func _process(delta: float) -> void:
 	pulling_sound.volume_db = calculate_volume(-power.value)
 	pushing_sound.volume_db = calculate_volume(power.value)
-	pulling_sound.pitch_scale = lerp(min_sound_pitch, max_sound_pitch, -power.value)
-	pushing_sound.pitch_scale = lerp(min_sound_pitch, max_sound_pitch, power.value)
+	var pullPitch = lerp(min_sound_pitch, max_sound_pitch, -power.value)
+	if (pullPitch > 0):
+		pulling_sound.pitch_scale = pullPitch
+	var pushPitch = lerp(min_sound_pitch, max_sound_pitch, power.value)
+	if (pushPitch > 0):
+		pushing_sound.pitch_scale = pushPitch
+	
 
 
 func on_input_received(event: InputEvent):

@@ -30,7 +30,7 @@ func _magnet_physics_process(power: float, target_pos: Vector3, direction: Vecto
 	var distance_percent = (25.0-global_position.distance_to(target_pos))/25.0
 	magnet_velocity = to_magnet * power * magnet_force * distance_percent
 	
-	damaging = power > 0
+	damaging = linear_velocity.length() > 20
 	
 func _magnet_process(power: float, target_pos : Vector3) -> void:
 	var to_magnet: Vector3 = global_position - target_pos
@@ -39,8 +39,12 @@ func _magnet_process(power: float, target_pos : Vector3) -> void:
 
 	if (freeze == true and lastFreeze == false):
 		Console.message("PICKED UP OBJECT")
+		if ($Sprite3D != null):
+			$Sprite3D.modulate.a = 0.025
 	elif (freeze == false and lastFreeze == true):
 		Console.message("THROW OBJECT")
+		if (get_node("Sprite3D") != null):
+			$Sprite3D.modulate.a = 1.0
 
 	if freeze:
 		global_position = target_pos
