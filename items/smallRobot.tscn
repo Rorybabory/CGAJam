@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
-[node name="Item" type="RigidBody3D" groups=["Button Pressers", "Damages"]]
+[node name="Item" type="RigidBody3D" groups=["Button Pressers", "Damages", "Garbage"]]
 collision_layer = 4
 collision_mask = 3
 axis_lock_angular_x = true

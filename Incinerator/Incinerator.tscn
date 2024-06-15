@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://btdhdp5ertnuf"]
+
+[ext_resource type="ArrayMesh" uid="uid://blw4v00iovvuw" path="res://Incinerator/mesh.obj" id="1_8rctw"]
+[ext_resource type="Script" path="res://Incinerator/Incinerator.gd" id="1_vlj65"]
+[ext_resource type="Texture2D" uid="uid://p4jg2jcve3nr" path="res://Incinerator/texture.png" id="2_apbd4"]
+[ext_resource type="Texture2D" uid="uid://lbjskkpgm77m" path="res://Incinerator/fire.png" id="3_fs61b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya7xo"]
+albedo_texture = ExtResource("2_apbd4")
+texture_filter = 0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1bisw"]
+height = 13.2335
+radius = 8.87901
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b1r05"]
+height = 5.06931
+radius = 7.98435
+
+[node name="Incinerator" type="Node3D"]
+script = ExtResource("1_vlj65")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+mesh = ExtResource("1_8rctw")
+surface_material_override/0 = SubResource("StandardMaterial3D_ya7xo")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.07049, -2.10953)
+pixel_size = 0.2
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_fs61b")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11191, 7.07049, 2.77084)
+pixel_size = 0.2
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_fs61b")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67336, 7.07049, -1.63861)
+pixel_size = 0.2
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_fs61b")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6558, 5.35871, 0.896974)
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_fs61b")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01227, 5.46723, 1.93434)
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_fs61b")
+
+[node name="Fire" type="Node" parent="."]
+
+[node name="Trigger" type="Area3D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.32216, 0)
+shape = SubResource("CylinderShape3D_1bisw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.341, 0)
+light_energy = 60.0
+omni_range = 25.4741
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59257, 0)
+shape = SubResource("CylinderShape3D_b1r05")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

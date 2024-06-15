@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blw4v00iovvuw"
+path="res://.godot/imported/mesh.obj-2d5ff8323c624da4d8b38c712278f820.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mesh.obj-2d5ff8323c624da4d8b38c712278f820.mesh"]
+
+source_file="res://Incinerator/mesh.obj"
+dest_files=["res://.godot/imported/mesh.obj-2d5ff8323c624da4d8b38c712278f820.mesh", "res://.godot/imported/mesh.obj-2d5ff8323c624da4d8b38c712278f820.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

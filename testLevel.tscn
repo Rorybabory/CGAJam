@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://c0qjepbwnxj1h"]
+[gd_scene load_steps=74 format=3 uid="uid://c0qjepbwnxj1h"]
 
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="1_bbgtc"]
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_dpjgp"]
@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://cvmft4nbxiujj" path="res://textures/Cyberpunk/lightstrip.tres" id="14_l2sqs"]
 [ext_resource type="PackedScene" uid="uid://6xw74f3dlge2" path="res://enemies/bobot.tscn" id="18_dx48b"]
 [ext_resource type="PackedScene" uid="uid://dfqi5cjybh7ph" path="res://items/box.tscn" id="19_mgqja"]
+[ext_resource type="PackedScene" uid="uid://btdhdp5ertnuf" path="res://Incinerator/Incinerator.tscn" id="20_me4fk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("1_bbgtc")
@@ -501,3 +502,6 @@ target = NodePath("../Player")
 
 [node name="Box" parent="." instance=ExtResource("19_mgqja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2975, 1.57474, -2.10243)
+
+[node name="Incinerator" parent="." instance=ExtResource("20_me4fk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6305, 1, -19.1079)
