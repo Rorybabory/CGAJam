@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx75i1ky3dk1w"
-path="res://.godot/imported/standing.png-2d588a70b8e7655d8d97c1f6a2bc33ec.ctex"
+uid="uid://bnt5p2nvrixn0"
+path.s3tc="res://.godot/imported/destroyedRobot.png-745c4e4bbe979c0ba712bbf201a50599.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://enemies/bobot_sprites/standing.png"
-dest_files=["res://.godot/imported/standing.png-2d588a70b8e7655d8d97c1f6a2bc33ec.ctex"]
+source_file="res://Sprites/destroyedRobot.png"
+dest_files=["res://.godot/imported/destroyedRobot.png-745c4e4bbe979c0ba712bbf201a50599.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

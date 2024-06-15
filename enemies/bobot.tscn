@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://6xw74f3dlge2"]
+[gd_scene load_steps=8 format=3 uid="uid://6xw74f3dlge2"]
 
 [ext_resource type="Script" path="res://enemies/bobot_controller.gd" id="1_51ts6"]
 [ext_resource type="Script" path="res://enemies/enemy_health.gd" id="2_7rgg5"]
 [ext_resource type="Script" path="res://Oliver/resource events/event_node.gd" id="3_nfivp"]
 [ext_resource type="Texture2D" uid="uid://cx75i1ky3dk1w" path="res://enemies/bobot_sprites/standing.png" id="4_gcpoy"]
+[ext_resource type="AudioStream" uid="uid://behy5bi3w2k4o" path="res://Incinerator/Explosion.wav" id="5_y2l5m"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5x3xp"]
 height = 6.0
@@ -13,29 +14,29 @@ radius = 3.0
 height = 6.0
 radius = 1.50081
 
-[node name="Bobot" type="CharacterBody3D" node_paths=PackedStringArray("agent", "death_event")]
+[node name="Bobot" type="CharacterBody3D" node_paths=PackedStringArray("agent", "death_event") groups=["Garbage"]]
 script = ExtResource("1_51ts6")
 speed = 3.0
 agent = NodePath("NavigationAgent3D")
-death_event = NodePath("Health/Death Event")
+death_event = NodePath("CollisionShape3D/Death Event")
 
 [node name="Health" type="Area3D" parent="." node_paths=PackedStringArray("death_event")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01393, 0)
 collision_mask = 7
 script = ExtResource("2_7rgg5")
 max_health = 3
-death_event = NodePath("Death Event")
+death_event = NodePath("../CollisionShape3D/Death Event")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Health"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 shape = SubResource("CylinderShape3D_5x3xp")
 
-[node name="Death Event" type="Node" parent="Health"]
-script = ExtResource("3_nfivp")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01393, 0)
 shape = SubResource("CylinderShape3D_jxsfj")
+
+[node name="Death Event" type="Node" parent="CollisionShape3D"]
+script = ExtResource("3_nfivp")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 4.0
@@ -53,6 +54,10 @@ pixel_size = 0.07
 billboard = 1
 texture_filter = 0
 texture = ExtResource("4_gcpoy")
+
+[node name="Explosion" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_y2l5m")
+volume_db = -17.778
 
 [connection signal="body_entered" from="Health" to="Health" method="_on_body_entered"]
 [connection signal="health_damaged" from="Health" to="." method="_on_health_damaged"]

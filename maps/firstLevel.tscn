@@ -330,7 +330,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6706, 2.37996, 13.6275)
 environment = SubResource("Environment_2a4hn")
 
 [node name="Player" parent="." instance=ExtResource("3_cr5bv")]
-transform = Transform3D(-0.830295, 0, 0.557325, 0, 1, 0, -0.557325, 0, -0.830295, 1.20835, 1.23357, -2.77609)
+transform = Transform3D(-0.830295, 0, 0.557325, 0, 1, 0, -0.557325, 0, -0.830295, -17.9508, 1.23357, 3.79294)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40587, 4.88227, -5.00467)

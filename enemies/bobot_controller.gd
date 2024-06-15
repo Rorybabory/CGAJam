@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var walkInterval: float = 1.0
 enum states {STANDING, WALKING, ATTACKING, DAMAGE}
 
+var onDestroySpawn = preload("res://items/destroyedRobot.tscn")
 
 
 var currentState = states.WALKING
@@ -70,6 +71,9 @@ func _process(delta):
 	$Sprite3D.modulate = $Sprite3D.modulate.lerp(Color(1,1,1), delta * 3)
 
 func die() -> void:
+	var destroyed = onDestroySpawn.instantiate()
+	get_node("../").add_child(destroyed)
+	destroyed.global_position = global_position
 	queue_free()
 
 
@@ -78,5 +82,6 @@ func _on_health_damaged():
 	$Sprite3D.modulate = Color(0.0,0.0,0.0)
 	currentState = states.DAMAGE
 	stateTimer = 0.0
+	$Explosion.play()
 	$Sprite3D.flip_h = randi() % 2 == 0
 	pass # Replace with function body.

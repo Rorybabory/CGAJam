@@ -24,6 +24,7 @@ func _process(delta):
 		get_node("../Sprite3D").texture = sleepTexture
 		if (player.global_position.distance_squared_to(root.global_position) < 50):
 			asleep = false
+			get_node("../SecurityAudio").play()
 		return
 	else:
 		get_node("../Sprite3D").texture = mainTexture

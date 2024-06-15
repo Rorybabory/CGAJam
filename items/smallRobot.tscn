@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5vgglayax8fn"]
+[gd_scene load_steps=6 format=3 uid="uid://b5vgglayax8fn"]
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_es4py"]
 [ext_resource type="Texture2D" uid="uid://14bra1iu3lyf" path="res://Sprites/rover.png" id="2_vs85a"]
 [ext_resource type="Script" path="res://items/SmallRobot.gd" id="3_4ub4k"]
+[ext_resource type="AudioStream" uid="uid://dcmtxvbgoks4h" path="res://enemies/security.wav" id="4_rgere"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7qg2"]
 
@@ -34,3 +35,6 @@ target_position = Vector3(0, -0.595, 0)
 
 [node name="Navigator" type="Node" parent="."]
 script = ExtResource("3_4ub4k")
+
+[node name="SecurityAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_rgere")
