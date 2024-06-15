@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://btdhdp5ertnuf"]
+[gd_scene load_steps=9 format=3 uid="uid://btdhdp5ertnuf"]
 
 [ext_resource type="ArrayMesh" uid="uid://blw4v00iovvuw" path="res://Incinerator/mesh.obj" id="1_8rctw"]
 [ext_resource type="Script" path="res://Incinerator/Incinerator.gd" id="1_vlj65"]
 [ext_resource type="Texture2D" uid="uid://p4jg2jcve3nr" path="res://Incinerator/texture.png" id="2_apbd4"]
 [ext_resource type="Texture2D" uid="uid://lbjskkpgm77m" path="res://Incinerator/fire.png" id="3_fs61b"]
+[ext_resource type="Script" path="res://Incinerator/Fire.gd" id="5_lft4i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya7xo"]
 albedo_texture = ExtResource("2_apbd4")
@@ -25,40 +26,45 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 mesh = ExtResource("1_8rctw")
 surface_material_override/0 = SubResource("StandardMaterial3D_ya7xo")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Fire1" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.07049, -2.10953)
 pixel_size = 0.2
 billboard = 1
 texture_filter = 0
 texture = ExtResource("3_fs61b")
+script = ExtResource("5_lft4i")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="Fire2" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11191, 7.07049, 2.77084)
 pixel_size = 0.2
 billboard = 1
 texture_filter = 0
 texture = ExtResource("3_fs61b")
+script = ExtResource("5_lft4i")
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="Fire3" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67336, 7.07049, -1.63861)
 pixel_size = 0.2
 billboard = 1
 texture_filter = 0
 texture = ExtResource("3_fs61b")
+script = ExtResource("5_lft4i")
 
-[node name="Sprite3D4" type="Sprite3D" parent="."]
+[node name="Fire4" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6558, 5.35871, 0.896974)
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0
 texture = ExtResource("3_fs61b")
+script = ExtResource("5_lft4i")
 
-[node name="Sprite3D5" type="Sprite3D" parent="."]
+[node name="Fire5" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01227, 5.46723, 1.93434)
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0
 texture = ExtResource("3_fs61b")
+script = ExtResource("5_lft4i")
 
 [node name="Fire" type="Node" parent="."]
 
