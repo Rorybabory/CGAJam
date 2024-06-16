@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dw3vlppj6slxc"
+path="res://.godot/imported/thirdLevel.map-d3e5a925d8de186d5d19141b84cfe5fc.tres"
+
+[deps]
+
+source_file="res://maps/thirdLevel.map"
+dest_files=["res://.godot/imported/thirdLevel.map-d3e5a925d8de186d5d19141b84cfe5fc.tres"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://p2c4010nnsr"
+path="res://.godot/imported/thirdLevel.3.map-9396984540f1ca7eac6a5b4fbd9a60c6.tres"
+
+[deps]
+
+source_file="res://maps/autosave/thirdLevel.3.map"
+dest_files=["res://.godot/imported/thirdLevel.3.map-9396984540f1ca7eac6a5b4fbd9a60c6.tres"]
+
+[params]
+

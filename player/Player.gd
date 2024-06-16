@@ -130,12 +130,16 @@ func _process(delta):
 			#change scenes
 			var baseNode = get_node("../../")
 			var currentScene = get_node("../")
-			
-			var next = nextScene.instantiate()
-			baseNode.add_child(next)
-			currentScene.free()
-			Garbage.totalGarbage = -1
-			return
+			if (nextScene == null):
+				$EndScreen.show()
+				Garbage.totalGarbage = 1
+				Garbage.numGarbage = 0
+			else:
+				var next = nextScene.instantiate()
+				baseNode.add_child(next)
+				currentScene.free()
+				Garbage.totalGarbage = -1
+				return
 			pass
 		pass
 

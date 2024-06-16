@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 	var pushPitch = lerp(min_sound_pitch, max_sound_pitch, power.value)
 	if (pushPitch > 0):
 		pushing_sound.pitch_scale = pushPitch
+
 	
 
 

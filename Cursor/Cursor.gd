@@ -8,7 +8,7 @@ var cursorTextures = {
 	"turn_left_run" : preload("res://Cursor/turn_left_run.png"),
 	"turn_right_run" : preload("res://Cursor/turn_right_run.png"),
 	"turn_right" : preload("res://Cursor/turn_right.png"),
-	"turn_left" : preload("res://Cursor/turn_left.png"),
+	"turn_left" : preload("res://Cursor/turn_left.png")
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -51,6 +51,9 @@ func _process(_delta):
 			texture = cursorTextures["backward"]
 		
 		scale = Vector2(2,2)
+	var mainMenu = get_node_or_null("../MainMenu")
+	if (mainMenu != null):
+		texture = cursorTextures["turn_left_run"]
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	position = floor(((get_viewport().get_mouse_position())+Vector2(0,16))/4.0)*4.0
-	#print(str(mousePos))
 	pass

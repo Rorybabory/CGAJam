@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cgqvv2cqynaid"]
+[gd_scene load_steps=77 format=3 uid="uid://cgqvv2cqynaid"]
 
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_w6hfv"]
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="2_j1iuq"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ckejuxvv6gap" path="res://items/trash1.tscn" id="21_60l1o"]
 [ext_resource type="PackedScene" uid="uid://d2skjvi8fgoo" path="res://items/trash2.tscn" id="22_dnbhj"]
 [ext_resource type="PackedScene" uid="uid://nl3xg1dwg712" path="res://items/trashcan.tscn" id="23_opyqd"]
+[ext_resource type="Texture2D" uid="uid://4d6uesp7kkxv" path="res://ui/tutorialText.png" id="23_sct8m"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0l3sr"]
 panorama = ExtResource("2_j1iuq")
@@ -527,3 +528,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8264, 1, 15.0219)
 
 [node name="Item13" parent="." instance=ExtResource("18_k7dnm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62801, 1, 16.1843)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.969791, 0, 0.243937, 0, 1, 0, -0.243937, 0, 0.969791, -11.4258, 3.7535, -3.31127)
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("23_sct8m")
