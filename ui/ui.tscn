@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpecpguoxavau"]
+[gd_scene load_steps=17 format=3 uid="uid://cpecpguoxavau"]
 
 [ext_resource type="Texture2D" uid="uid://0as58al6q5ia" path="res://ui/UI.png" id="1_yjx2x"]
 [ext_resource type="Texture2D" uid="uid://clgi8lj8wa1cg" path="res://ui/magnet_charge_marker.png" id="2_h4g86"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Console/ConsoleText.gd" id="9_fis20"]
 [ext_resource type="Script" path="res://ui/GarbageCount.gd" id="10_pb3hl"]
 [ext_resource type="Texture2D" uid="uid://b1pqgmm7lo0o0" path="res://ui/trashcollected.png" id="11_ytv7e"]
+[ext_resource type="Texture2D" uid="uid://dmma4muo8chud" path="res://ui/help.png" id="12_5hatv"]
+[ext_resource type="Script" path="res://ui/help.gd" id="13_sevlk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xytl2"]
 
@@ -77,6 +79,13 @@ theme_override_fonts/normal_font = ExtResource("8_b80kr")
 theme_override_font_sizes/normal_font_size = 16
 text = "TRASH: 10/10"
 script = ExtResource("10_pb3hl")
+
+[node name="Help" type="TextureRect" parent="."]
+visible = false
+offset_right = 640.0
+offset_bottom = 400.0
+texture = ExtResource("12_5hatv")
+script = ExtResource("13_sevlk")
 
 [connection signal="drag_ended" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_drag_ended"]
 [connection signal="value_changed" from="UI Position_Scale/Power Slider" to="UI Position_Scale/Power Slider" method="_on_value_changed"]

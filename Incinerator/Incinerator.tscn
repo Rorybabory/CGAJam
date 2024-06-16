@@ -74,7 +74,7 @@ script = ExtResource("5_lft4i")
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.7787, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.91015, 0)
 shape = SubResource("CylinderShape3D_1bisw")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Trigger"]

@@ -16,6 +16,9 @@ shader_type canvas_item;
 // On Mac there is potentially a bug causing this to not work properly. If that is the case and you want to use the shader as an overlay
 // change all "overlay ? SCREEN_TEXTURE : TEXTURE" to only "SCREEN_TEXTURE" on lines 129-140, and "vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);"
 // to "vec2 uv = warp(SCREEN_UV);" on line 98.
+
+uniform bool enableCRT = true;
+
 uniform bool overlay = false;
 
 uniform sampler2D viewport_texture : filter_nearest;
@@ -227,5 +230,9 @@ void fragment()
 		text.rgb = (text.rgb - vec3(midpoint)) * contrast + midpoint;
 	}
 	
-	COLOR = text;
+	if (enableCRT == true) {
+		COLOR = text;
+	}else{
+		COLOR = texture(viewport_texture, UV);
+	}
 }

@@ -13,6 +13,7 @@ viewport_path = NodePath("SubViewportContainer/SubViewport")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0iqsk"]
 resource_local_to_scene = true
 shader = ExtResource("1_akbi4")
+shader_parameter/enableCRT = true
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.563
 shader_parameter/scanlines_width = 0.352
@@ -28,7 +29,7 @@ shader_parameter/noise_opacity = 0.418
 shader_parameter/noise_speed = 5.79
 shader_parameter/static_noise_intensity = 0.047
 shader_parameter/aberration = 0.00500005
-shader_parameter/brightness = 0.89
+shader_parameter/brightness = 1.005
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.04
 shader_parameter/clip_warp = false

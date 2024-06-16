@@ -15,7 +15,7 @@ func _process(delta):
 		timer = 0
 		timerTarget = randf_range(0.04, 0.3)
 		lightValue = randf_range(8, 30)
-	$Light.light_energy = lerpf($Light.light_energy, lightValue, delta * 8)
+	$Light.light_energy = lerpf($Light.light_energy, lightValue, delta * 6)
 	pass
 
 

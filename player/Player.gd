@@ -17,6 +17,9 @@ var GRAVITY = -9.81
 var target_velocity = Vector2(0,0)
 
 @onready var cameraHeight = $CameraPivot/Camera3D.position.y
+
+@export var nextScene : Resource
+
 var cameraOffset = 0.0
 
 var moveTimer = 0.0
@@ -103,7 +106,8 @@ func handle_input(delta):
 func _process(delta):
 	target_velocity = Vector3(0,0,0)
 	normalized_mouse()
-
+	if (Garbage.totalGarbage == -1):
+		Garbage.totalGarbage = get_tree().get_nodes_in_group("Garbage").size()
 	if (not is_on_floor()):
 		velocity.y += GRAVITY
 	else:
@@ -121,6 +125,19 @@ func _process(delta):
 	var tilt_percent = $"CameraPivot/Magnet Arm".vertical_percent
 	$CameraPivot.rotation_degrees.x = VERTICAL_TILT_RANGE * (tilt_percent - 0.5)
 
+	if (Garbage.numGarbage <= 0):
+		if (Input.is_action_just_pressed("next_scene")):
+			#change scenes
+			var baseNode = get_node("../../")
+			var currentScene = get_node("../")
+			
+			var next = nextScene.instantiate()
+			baseNode.add_child(next)
+			currentScene.free()
+			Garbage.totalGarbage = -1
+			return
+			pass
+		pass
 
 	move_and_slide();
 	pass

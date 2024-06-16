@@ -1,9 +1,10 @@
-[gd_scene load_steps=88 format=3 uid="uid://c66refr54nush"]
+[gd_scene load_steps=89 format=3 uid="uid://c66refr54nush"]
 
 [ext_resource type="PackedScene" uid="uid://b5vgglayax8fn" path="res://items/smallRobot.tscn" id="1_xg2so"]
 [ext_resource type="Texture2D" uid="uid://bdyyu3tadykhx" path="res://abandoned_slipway_4k.exr" id="2_vwc6u"]
 [ext_resource type="PackedScene" uid="uid://dhfsx4iinxati" path="res://player/player.tscn" id="3_cr5bv"]
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_50e0l"]
+[ext_resource type="PackedScene" uid="uid://cgqvv2cqynaid" path="res://maps/secondLevel.tscn" id="4_bqq53"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="5_macwb"]
 [ext_resource type="Material" uid="uid://c375b3askdgp8" path="res://textures/Cyberpunk/floortile.tres" id="7_1sg5g"]
 [ext_resource type="Material" uid="uid://b2wv6kyd6p8to" path="res://textures/Cyberpunk/scifi_tile.tres" id="7_wswp3"]
@@ -331,6 +332,7 @@ environment = SubResource("Environment_2a4hn")
 
 [node name="Player" parent="." instance=ExtResource("3_cr5bv")]
 transform = Transform3D(-0.830295, 0, 0.557325, 0, 1, 0, -0.557325, 0, -0.830295, -17.9508, 1.23357, 3.79294)
+nextScene = ExtResource("4_bqq53")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40587, 4.88227, -5.00467)
@@ -577,12 +579,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89799, 1, -2.01811)
 
 [node name="Brick4" parent="." instance=ExtResource("23_vfxp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47454, 1, 0.0429533)
-
-[node name="Brick5" parent="." instance=ExtResource("23_vfxp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78783, 1, 0.899084)
-
-[node name="Brick6" parent="." instance=ExtResource("23_vfxp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3971, 1, -0.789485)
 
 [node name="Item7" parent="." instance=ExtResource("24_kaf1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74169, 1, 9.11652)
