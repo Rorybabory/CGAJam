@@ -5,6 +5,8 @@ extends Node
 
 @export var start_scene: PackedScene
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_start_pressed() -> void:
 	var scene_instance = start_scene.instantiate()

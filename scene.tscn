@@ -81,12 +81,12 @@ render_target_update_mode = 4
 
 [node name="Game View Parent" type="Node" parent="SubViewportContainer/SubViewport/Palettize/mainViewport"]
 
+[node name="MainMenu" parent="SubViewportContainer/SubViewport/Palettize/mainViewport" node_paths=PackedStringArray("level_scene_parent") instance=ExtResource("6_owlwh")]
+level_scene_parent = NodePath("../Game View Parent")
+start_scene = ExtResource("2_jgcwc")
+
 [node name="Cursor" type="Sprite2D" parent="SubViewportContainer/SubViewport/Palettize/mainViewport"]
 texture_filter = 1
 position = Vector2(556, 619)
 scale = Vector2(4, 4)
 script = ExtResource("6_1dnb6")
-
-[node name="MainMenu" parent="SubViewportContainer/SubViewport/Palettize/mainViewport" node_paths=PackedStringArray("level_scene_parent") instance=ExtResource("6_owlwh")]
-level_scene_parent = NodePath("../Game View Parent")
-start_scene = ExtResource("2_jgcwc")
